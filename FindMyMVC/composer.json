@@ -1,0 +1,15 @@
+{
+    "name": "administrateur/FindMy",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [{
+        "name": "fatiha saht",
+        "email": "fatihhaa27@gmail.com"
+    }],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
