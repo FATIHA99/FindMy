@@ -1,6 +1,8 @@
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f8fafb; }
+  background-color: #f8fafb; 
+
+}
 
 p {
   color: #b3b3b3;
@@ -245,7 +247,7 @@ html {
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
-
+/* 
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -254,7 +256,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff; }
+  background-color: #fff; } */
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -8543,14 +8545,14 @@ a[data-toggle="collapse"] {
     box-sizing: border-box
 }
 
-body {
+/* body {
     position: relative;
     margin: var(--header-height) 0 0 0;
     padding: 0 1rem;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     transition: .5s
-}
+} */
 
 a {
     text-decoration: none
@@ -8657,9 +8659,9 @@ a {
     left: 0
 }
 
-.body-pd {
+/* .body-pd {
     padding-left: calc(var(--nav-width) + 1rem)
-}
+} */
 
 .active {
     color: var(--white-color)
@@ -8681,7 +8683,7 @@ a {
 @media screen and (min-width: 768px) {
     body {
         margin: calc(var(--header-height) + 1rem) 0 0 0;
-        padding-left: calc(var(--nav-width) + 2rem)
+        /* padding-left: calc(var(--nav-width) + 2rem) */
     }
     .header {
         height: calc(var(--header-height) + 1rem);
