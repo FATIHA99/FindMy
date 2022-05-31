@@ -21,6 +21,10 @@ abstract class Model
     }
 
     abstract public function rules(): array;
+    public function labels():array
+    {
+        return [];
+    }
 
     public array $errors = [];
 
@@ -33,7 +37,6 @@ abstract class Model
                 if(!is_string($ruleName)) {
                     $ruleName = $rule[0];
                 }
-
                 if ($ruleName === self::RULE_REQUIRED && !$value) {
                     $this->addError($attribute, self::RULE_REQUIRED);
                 }
@@ -72,16 +75,22 @@ abstract class Model
 
         return empty($this->errors);
     }
-
-    public function addError(string $attribute, string $rule, $params = [])
+// ! add error
+    private function addError(string $attribute, string $rule, $params = [])
     {
         $message = $this->errorMessages()[$rule] ?? '';
         foreach($params as $key => $value) {
             $message = str_replace("{{$key}}", $value, $message);
         }
-        $this->errors[$attribute][] = $message;
+        $this->errors[$attribute][ ] = $message;
     }
 
+// ! error 
+    public function Error(string $attribute, string $message)
+    {
+       
+        $this->errors[$attribute][ ] = $message;
+    }
     public function errorMessages() 
     {
         return [

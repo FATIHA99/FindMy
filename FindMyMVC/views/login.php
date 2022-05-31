@@ -1,23 +1,5 @@
-<!doctype html>
-<html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="css/styles.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="assets/img/logos/search1.png" />
-    <title>FindMy</title>
-</head>
-<body>
+<?php include_once '../views/decoupage/header.php' ;?>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark  fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#page-top">
@@ -44,35 +26,32 @@
                                 <h1 class="text-warning fs-1 ">  Page de connexion </h1>
                                 <p class="mb-4"> vous avez perdu votre objet !! ne vous inquiétez pas FindMy peut vous aider</p>
                             </div>
-                            <form action="#" method="post">
+                            <?php $form= \app\core\form\Form :: begin('','POST') ?>
+
                                 <div class="form-group first my-5">
-                                    <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur ">
+                                    <?php echo $form -> field($model,'username') ?> 
                                 </div>
                                 <div class="form-group last mb-4 my-5">
-                                    <input type="password" class="form-control" id="password" placeholder="mot de passe ">
+                                    <?php echo $form -> field($model,'user_password') -> passwordField() ?>
+
                                 </div>
                                 <div class="d-flex mb-5 align-items-center">
                                    <input type="checkbox" checked="checked" class="me-4" />
                                     <span class="caption">Remember me</span>
                                     <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
                                 </div>
-                                <a href="pagePublic.html"  class="  btn text-white btn-block btn-warning text-decoration-none pt-2  fw-bold"> connexion</a>
-                            </form>
+                              <button type="submit"  class="  btn text-white btn-block btn-warning text-decoration-none pt-2  fw-bold"> connexion</button>
+                                <?php $form= \app\core\form\Form :: end() ?>
+
                         </div>
                     </div>
-
                 </div>
-
             </div>
-    
     </main>
-
     <?php include_once '../views/decoupage/footer.php' ;?>
     <script src="js/bootstrap.min.js"></script>
         <!-- pour les icon de footer  -->
-
     <script src="fontawesome-v6/js/all.min.js"></script>   
 
 </body>
-
 </html>

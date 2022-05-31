@@ -19,13 +19,10 @@ class Field
     public string $attribute;
     public string $value;
     public string $label;
-
-
     public function __construct($model, $attribute)
     {
         $this->label = self::LABEL_SHOW;
         $this->type = self::TYPE_TEXT;
-
         $this->model = $model;
         $this->attribute = $attribute;
     }
@@ -35,15 +32,16 @@ class Field
 
         return sprintf('
             <div class="form-group">
-                <label class="%s">%s</label>
-                <input type="%s" name="%s" value="%s" class="form-control%s">
+                <label>%s</label> 
+                <input type="%s" name="%s" value="%s" class=" form-control%s"/>
                 <div class="invalid-feedback">%s</div>
             </div>
         ', 
-            $this->label,
-            $this->attribute,
+        //  $this->attribute,
+            $this->model->labels()[$this->attribute] ?? $this ->attribute,
+           
             $this->type,
-            $this->attribute,
+            $this->attribute, 
             $this->model->{$this->attribute},
             $this->model->hasError($this->attribute) ? ' is-invalid' : '',
             $this->model->getFirstError($this->attribute)
@@ -57,6 +55,12 @@ class Field
         return $this;
     }
 
+    public function textField()
+    {
+        $this->type = self::TYPE_TEXT;
+
+        return $this;
+    }
     public function hiddenField()
     {
         $this->type = self::TYPE_HIDDEN;

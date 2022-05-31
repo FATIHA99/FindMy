@@ -1,7 +1,5 @@
 <?php
-
 namespace app\models;
-
 use app\core\DbModel;
 
 class User extends DbModel
@@ -10,66 +8,67 @@ class User extends DbModel
     const STATUS_ACTIVE = 1;
     const STATUS_DELETED = 2;
 
-    public string $firstname = '';
-    public string $lastname = '';
-    public string $email =  '';
-    public int $status = self::STATUS_INACTIVE;
-    public string $password = '';
+    public int $id =0;
+    public string $username = '';
+    public string $user_password = '';
     public string $confirmPassword = '';
-
-
     public function tableName(): string
     {
         return 'users';
     }
-
-    public function updateUser()
+    public function primaryKey():string
     {
-        return parent::update();
-    }
-
-    public function selectAll()
-    {
-        return parent::selectAll();
-    }
-
-    public function select()
-    {
-        return parent::select();
-    }
-
-    public function delete()
-    {
-        return parent::delete();
+        return 'id'; 
     }
 
     public function save()
     {
         $this->status = self::STATUS_INACTIVE;
-        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        // $this->user_password = password_hash($this->user_password, PASSWORD_DEFAULT);
         return parent::save();
     }
 
     public function rules(): array
     {
         return [
-            'firstname' => [self::RULE_REQUIRED],
-            'lastname' => [self::RULE_REQUIRED],
-            'email' => [self::RULE_REQUIRED, self::RULE_EMAIL, [
-                self::RULE_UNIQUE, 'class' => self::class
-            ]],
-            'password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 8], [self::RULE_MAX, 'max' => 24]],
-            'confirmPassword' => [self::RULE_REQUIRED, [self::RULE_MATCH, 'match' => 'password']]
+            'username' => [self::RULE_REQUIRED], 
+            'user_password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 4], [self::RULE_MAX, 'max' => 24]],
+            'confirmPassword' => [self::RULE_REQUIRED, [self::RULE_MATCH, 'match' => 'user_password']]
         ];
     }
 
     public function attributes(): array
     {
-        return ['firstname', 'lastname', 'email', 'password', 'status'];
+        return ['username', 'user_password'];
     }
-
-    public function getId(): int
+    public function labels(): array
     {
-        return 2;
-    }
+        return[
+            'username'=>'nom de utilisateur ',
+            'user_password'=>'mot de passe ',
+
+        ];
+    } 
+  
+
+     // public function updateUser()
+    // {
+    //     return parent::update();
+    // }
+
+    // public function selectAll()
+    // {
+    //     return parent::selectAll();
+    // }
+
+    // public function select()
+    // {
+    //     return parent::select();
+    // }
+
+    // public function delete()
+    // {
+    //     return parent::delete();
+    // }
+
 }

@@ -1,29 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="fatiha saht " content="" />
-    <title>FindMy</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/img/logos/search1.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" integrity="sha512-sVSECYdnRMezwuq5uAjKQJEcu2wybeAPjU4VJQ9pCRcCY4pIpIw4YMHIOQ0CypfwHRvdSPbH++dA3O4Hihm/LQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" /> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" /> -->
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="./css/styles.css" rel="stylesheet"/>
-    <!-- <link href="fontawesome-v6/css/all.min.css" rel="stylesheet" /> -->
-    
+<?php include_once '../views/decoupage/header.php' ;?>
 
-</head>
-
-<body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top">
-                <h4> <img src="assets/img/logos/search1.png  " alt="..." />FindMy</h4>
+                <h4 class="text-warning"> <img src="assets/img/logos/search1.png  " alt="..." />FindMy</h4>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -43,11 +24,11 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading"> <h1>Bienvenu a  FindMy!</h1> </div>
-            <div class="masthead-heading text-uppercase">
-                <h3>si vous avez perdu votre objet ? FindMy vous aide à le retrouver en quelques clics !</h3>
+            <div class="masthead-subheading "> <h1 class="text-white">Bienvenu a  FindMy!</h1> </div>
+            <div class="masthead-heading text-uppercase ">
+                <h3 class="text-white">si vous avez perdu votre objet ? FindMy vous aide à le retrouver en quelques clics !</h3>
             </div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="/login">Entrer</a>
+            <a class="btn btn-warning btn-xl text-uppercase" href="/login">Entrer</a>
         </div>
     </header>
     <!-- Services-->
@@ -128,7 +109,7 @@
 
                 <li class="timeline-inverted">
                     <div class="timeline-image">
-                        <h4>
+                        <h4 class="text-light">
                              Nous cherchons
                             toujours à nous  <br /> 
                            améliorer<br />

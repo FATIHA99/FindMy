@@ -10,8 +10,7 @@ class m0002_users
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(50) NOT NULL,
                 user_password VARCHAR(50) NOT NULL,
-                user_role  VARCHAR(50),
-                fk_user_role INT,
+                fk_user_role INT DEFAULT 1,
                      FOREIGN KEY(fk_user_role) 
                      REFERENCES roles(id)
                      ON DELETE CASCADE
