@@ -26,10 +26,12 @@ class SiteController extends Controller
 // ! objets public 
     public function addObjetPerdu(Request $request)
     {
+
       $objetPerdu = new objetPerdu();
       if($request->isPost())
       {
         $objetPerdu->loadData($request->getBody());   
+        
           if ($objetPerdu->insertObjetPerdu())
           {
               Application::$app->response->redirect('/mesDeclarations');

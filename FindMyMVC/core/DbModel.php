@@ -27,8 +27,10 @@ abstract class DbModel extends Model
             
             if($attribute === "typeImg")
             {
-                // $this->{$attribute}=$_FILES[$image]['type'];
+                $this->{$attribute}=$_FILES['typeImg']['type'];
+               
             }
+          
 
             // if($attribute === "nameImg")
             // {

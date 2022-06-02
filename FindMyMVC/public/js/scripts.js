@@ -45,6 +45,15 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+
+
+function showmodelTrouve() {
+ 
+    document.getElementById('informationsTrouve').style.display = "block";
+    // document.querySelector('.circle-declaration ').style.display = "none";
+
+}
+
 function showmodel() {
  
     document.getElementById('informations').style.display = "block";
@@ -54,6 +63,7 @@ function showmodel() {
 
 function btnCloseModel() {
     document.getElementById('informations').style.display = "none";
+    document.getElementById('informationsTrouve').style.display = "none";
 
 }
 

@@ -1,6 +1,6 @@
 <?php 
 
-class m0003_objetPerdu 
+class m0004_objetTrouve 
 {
 
     public function up()
@@ -19,13 +19,12 @@ class m0003_objetPerdu
         despo VARCHAR(50),
         typeImg VARCHAR(50),
         nameImg VARCHAR(50),
-        dataImg LONGBLOB , 
-        fk_user INT ,
+        dataImg LONGBLOB, 
+        fk_user INT,
         FOREIGN KEY(fk_user) 
         REFERENCES users(id)
         ON DELETE CASCADE
         ) ENGINE=INNODB; ";
-          
         $db->pdo->exec($SQL);
     }
 

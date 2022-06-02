@@ -54,13 +54,13 @@
     <?php  foreach($objets as $val ){ ?>
     <div class="card mb-3 container py-3 border-bottom border-success " style="max-width: 800px; ">      
         <div class="row g-0 ">
-            <div class="col-md-4 ">
-                <img src="assets/img/sac.jfif " class="img-fluid rounded-start " alt="... ">
-                <?php 
-                // echo "<embed src='data:'".$val['type'].";base64,".base64_encode./>";
-                ?>
+            <div class="col-md-4 bg-light border ">
+                <!-- <img src="assets/img/sac.jfif " class="img-fluid rounded-start " alt="... "> -->
+                <td> <img src="files/<?= $val['image']?>"  class="img-fluid rounded-start " alt="..."></td>
+
+               
             </div>
-            <div class="col-md-8 ">
+            <div class="col-md-8">
                 <div class="card-body ">
                     <h5 class="card-title "> <?php echo $val['objet'] ?></h5>
                     <h6 class="card-text "><?php echo $val['categorie'] ?></h6>

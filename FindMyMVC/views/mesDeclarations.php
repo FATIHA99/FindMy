@@ -64,7 +64,7 @@
                                 <i class="bi bi-eye-fill"></i>
                                 </button>
                                 </td>
-                                <td> <img src="assets/img/chien.jpg" style="width: 80px;  height: 80px;" class="rounded-circle" alt="image d'objet" ></td>
+                                <td> <img src="files/<?= $val['image']?>" style="width: 80px;  height: 80px;" class="rounded-circle" alt="image d'objet" ></td>
                                 <td class="p-4"> <?= $val['declaration'] ?></td>
                                 <td class="p-4"> <?= $val['objet'] ?></td>
                                 <td class="p-4"> <?= $val['categorie'] ?></td>

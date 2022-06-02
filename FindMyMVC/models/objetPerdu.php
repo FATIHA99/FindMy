@@ -14,9 +14,7 @@ class objetPerdu extends DbModel
     public string $adresse = '';
     public string $details = '';
     public string $tele = '';
-    public string $typeImg = '';
-    public string $nameImg = '';
-    public string $dataImg = '';
+    public string $image = '';
     public string $fk_user = '';
 
     public function tableName(): string
@@ -63,7 +61,7 @@ class objetPerdu extends DbModel
     // ! table des attributs
     public function attributes(): array
     {
-        return ['id','declaration', 'objet', 'categorie', 'dateDePerd', 'ville','adresse','details','tele','typeImg','nameImg','dataImg','fk_user'];
+        return ['id','declaration', 'objet', 'categorie', 'dateDePerd', 'ville','adresse','details','tele', 'image','fk_user'];
     }
 
  
