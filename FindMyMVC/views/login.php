@@ -17,30 +17,24 @@
         </div>
     </nav>
     <main class="content">
-            <div class="row">
+            <div class="row d-flex justify-content-center align-items-center  mb-5">
             <?php include_once '../views/decoupage/svgLogin.php' ;?>
-                <div class="col-md-6 contents p-4">
+                <div class="col-md-6 contents">
                     <div class="row justify-content-center">
-                        <div class="col-md-10 pt-5  ">
+                        <div class="col-md-10 p-5  ">
                             <div class="mb-4">
-                                <h1 class="text-warning fs-1 ">  Page de connexion </h1>
+                                <h1 class="text-warning fs-1 text-uppercase">  Page de connexion </h1>
                                 <p class="mb-4"> vous avez perdu votre objet !! ne vous inquiétez pas FindMy peut vous aider</p>
                             </div>
-                            <?php $form= \app\core\form\Form :: begin('','POST') ?>
-
-                                <div class="form-group first my-5">
+                                    <?php $form= \app\core\form\Form :: begin('','POST') ?>
                                     <?php echo $form -> field($model,'username') ?> 
-                                </div>
-                                <div class="form-group last mb-4 my-5">
                                     <?php echo $form -> field($model,'user_password') -> passwordField() ?>
-
-                                </div>
-                                <div class="d-flex mb-5 align-items-center">
+                                <div class="d-flex mb-5 align-items-center my-4">
                                    <input type="checkbox" checked="checked" class="me-4" />
                                     <span class="caption">Remember me</span>
                                     <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
                                 </div>
-                              <button type="submit"  class="  btn text-white btn-block btn-warning text-decoration-none pt-2  fw-bold"> connexion</button>
+                              <button type="submit"  class=" w-100 btn text-white btn-block btn-warning text-decoration-none pt-2  fw-bold"> connexion</button>
                                 <?php $form= \app\core\form\Form :: end() ?>
 
                         </div>

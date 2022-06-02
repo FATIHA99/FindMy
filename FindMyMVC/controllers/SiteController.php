@@ -9,7 +9,7 @@ use app\models\objetPerdu;
 
 class SiteController extends Controller
 {
-// ! for the laning page 
+// ! for the landing page 
     public function landingPage()
     {
         return $this->render('landingPage');
@@ -23,18 +23,13 @@ class SiteController extends Controller
             return $this->render('home', ['objets' => $objetsPerdu->selectAll()]);
         }
     }
-
-
-   
 // ! objets public 
     public function addObjetPerdu(Request $request)
     {
       $objetPerdu = new objetPerdu();
       if($request->isPost())
       {
-        $objetPerdu->loadData($request->getBody());
-      var_dump($objetPerdu);
-   
+        $objetPerdu->loadData($request->getBody());   
           if ($objetPerdu->insertObjetPerdu())
           {
               Application::$app->response->redirect('/mesDeclarations');

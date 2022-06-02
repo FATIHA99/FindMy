@@ -65,5 +65,7 @@ class objetPerdu extends DbModel
     {
         return ['id','declaration', 'objet', 'categorie', 'dateDePerd', 'ville','adresse','details','tele','typeImg','nameImg','dataImg','fk_user'];
     }
+
+ 
 }
 

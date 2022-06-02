@@ -41,6 +41,7 @@ class User extends DbModel
     {
         return ['username', 'user_password'];
     }
+    
     public function labels(): array
     {
         return[

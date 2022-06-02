@@ -7,18 +7,17 @@ use app\core\Application;
 class mesDeclarations extends Controller
 {
     
-    // ! affichage
+// ! affichage
     public function mesDeclarations(Request $request)
     {
-     
         $id=intval( $_SESSION['id']);
         $objetsPerdu = new objetPerdu();
         if($request->isGet())
-        {
+        {  
             return $this->render('mesDeclarations', ['mesDeclarations' => $objetsPerdu->select($id)]);
         }
     }
-// !
+// ! delete 
 
     public function delete(Request $request)
     {

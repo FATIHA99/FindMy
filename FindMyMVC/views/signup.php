@@ -21,7 +21,7 @@
     </nav>
 
     <main class="content">
-            <div class="row">
+            <div class="row d-flex justify-content-center align-items-center">
             <?php include_once '../views/decoupage/svgLogin.php' ;?>
             <div class="col-md-6 contents p-4">
                     <div class="row justify-content-center">

@@ -52,10 +52,7 @@
 <div>
 
     <?php  foreach($objets as $val ){ ?>
-    <div class="card mb-3 container py-3 border-bottom border-success " style="max-width: 800px; ">
- 
-
-      
+    <div class="card mb-3 container py-3 border-bottom border-success " style="max-width: 800px; ">      
         <div class="row g-0 ">
             <div class="col-md-4 ">
                 <img src="assets/img/sac.jfif " class="img-fluid rounded-start " alt="... ">

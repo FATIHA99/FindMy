@@ -58,22 +58,32 @@ function btnCloseModel() {
 }
 
 function showObject() {
-    
-
     document.getElementById('objet').style.display="block";
-
 }
 
 function closeModel(){
     document.getElementById('objet').style.display = "none";
-   
+
+}
+// ! objet perdu 
+function showObjetPerdu(){
+    document.getElementById('ObjetsPerdu').style.display = "block";
+    document.getElementById('ObjetsTrouve').style.display = "none";
 
 }
 
 
-//  d=side bar admin
+// ! objet Trouve 
+function showObjetTrouve(){
+    document.getElementById('ObjetsPerdu').style.display = "none";
+    document.getElementById('ObjetsTrouve').style.display = "block";
+
+}
 
 
+
+
+// !side bar admin
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -100,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
 
-    /*===== LINK ACTIVE =====*/
     const linkColor = document.querySelectorAll('.nav_link')
 
     function colorLink() {
@@ -110,6 +119,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
     linkColor.forEach(l => l.addEventListener('click', colorLink))
-
-    // Your code to run since DOM is loaded and ready
 });

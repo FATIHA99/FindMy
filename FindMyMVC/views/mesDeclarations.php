@@ -1,5 +1,4 @@
 <?php include_once '../views/decoupage/header.php' ;?>
-
 <?php include_once '../views/decoupage/navbar.php' ;?>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark  sticky-top ">
         <div class="container">
@@ -25,16 +24,24 @@
             </div>
         </div>
     </nav>
-
 <main>
 
 
+<div class=" container  d-flex flex-column  justify-content-center align-items-center">
+    <div><h1 class="mb-5 text-decoration-underline">Mes declarations</h1></div>
+    <div class="">
+        <button class="btn btn-danger" onclick="showObjetPerdu();">Objet Perdu </button>
+        <button class="btn btn-success" onclick="showObjetTrouve();">Objet Trouve </button>
+    </div>
+</div>
+
     <div class="content p-0">
         <div class="container" >
-            <h1 class="mb-5 text-decoration-underline">Mes Objet </h1>
             <!-- table  -->
                 <div class="table-responsive">
-                    <table class="table custom-table">
+                <div id="ObjetsPerdu" style="display: none;"> 
+                         <h1> perdu</h1>
+                    <table class="table custom-table" >
                         <thead>
                             <tr>
                                 <th> </th>
@@ -53,14 +60,11 @@
                         <?php  foreach($mesDeclarations as $val) { ?>
                             <tr>
                                 <td >
-                                <button  class="border-0  bg-white "  data-bs-toggle="modal" data-bs-target="#staticBackdrop" > 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                                </svg>
+                                <button  class="border-0  bg-dark mt-3  text-warning"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" > 
+                                <i class="bi bi-eye-fill"></i>
                                 </button>
                                 </td>
                                 <td> <img src="assets/img/chien.jpg" style="width: 80px;  height: 80px;" class="rounded-circle" alt="image d'objet" ></td>
-                                    
                                 <td class="p-4"> <?= $val['declaration'] ?></td>
                                 <td class="p-4"> <?= $val['objet'] ?></td>
                                 <td class="p-4"> <?= $val['categorie'] ?></td>
@@ -75,7 +79,6 @@
                                 </button>
                                 </td>
                                 <td class="p-4" >
-
                                   <a href="./deleteObjetPerdu?id=<?php echo $val['id'] ?>"><i class="bi bi-trash3 text-danger"></i></a>
                                 </td>
                             
@@ -83,6 +86,77 @@
                         <?php } ?>
                         </tbody>
                     </table>
+                </div>
+                        <!-- ! objet trouve  -->
+                        <div id="ObjetsTrouve" style="display:block;"> 
+                         <h1> trouve</h1>
+                        <table class="table custom-table" >
+                        <thead>
+                       
+                            <tr>
+                                <th> </th>
+                                <th scope="col">Photo</th>
+                                <th scope="col">declaration</th>
+                                <th scope="col">Objet</th>
+                                <th scope="col">Categorie</th>
+                                <th scope="col">Date de perd</th>
+                                <th scope="col">Ville</th>
+                                <th scope="col">Adresse</th>
+                                <!-- <th scope="col">Details</th> -->
+                                <th scope="col">Telephone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    
+                            <tr>
+                                <td >
+                                <button  class="border-0  bg-white "  data-bs-toggle="modal" data-bs-target="#staticBackdrop" > 
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                                </button>
+                                </td>
+                                <td> <img src="assets/img/chien.jpg" style="width: 80px;  height: 80px;" class="rounded-circle" alt="image d'objet" ></td>
+                                    
+                                <td class="p-4">xx</td>
+                                <td class="p-4"> vv</td>
+                                <td class="p-4">ss</td>
+                                <td class="p-4">xcbx</td>
+                                <td class="p-4"> xjcjx</td>
+                                <td class="p-4"> xjcx</td>
+                                <!-- <td class="p-4"> <?= $val['details'] ?></td> -->
+                                <td class="p-4"> 87338</td>
+                                <td class="p-4">
+                                <button onclick="showmodel();" class="border-0  bg-white">
+                                <i class="bi bi-pen text-success"></i>
+                                </button>
+                                </td>
+                                <td class="p-4" >
+                                  <a href="./deleteObjetPerdu?id=<?php echo $val['id'] ?>"><i class="bi bi-trash3 text-danger"></i></a>
+                                </td>
+                            
+                            </tr>
+              
+                        </tbody>
+                    </table>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
         </div>
     </div>
@@ -92,7 +166,7 @@
     <div class="modal-dialog  modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">non de l'objet</h5>
+          <h5 class="modal-title" id="staticBackdropLabel"> <?= $val['objet'] ?></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -100,11 +174,7 @@
                 <img  src="assets/img/chien.jpg" alt="..." style="width: 56%;">
             </div>
             <div class="col">
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestiae laudantium 
-                dolor aut velit doloribus esse labore ex harum, quibusdam culpa, quam officiis, 
-                sequi tenetur voluptatum adipisci obcaecati nihil molestias.
-            </p>
+            <?= $val['details'] ?>
       
              </div>
         </div>

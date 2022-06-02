@@ -1,5 +1,4 @@
 <?php
-
 namespace app\controllers;
 
 use app\core\Application;
@@ -28,21 +27,20 @@ class AuthController extends Controller
         return $this->render('login',['model'=> $loginForm]);
     }
 //  ! register
-public function signup(Request $request){
-    $user=new User();
-    if($request -> isPost())
+    public function signup(Request $request)
     {
-        $user -> loadData($request -> getBody());
-        if($user->validate() && $user->save())
+        $user=new User();
+        if($request -> isPost())
         {
-            return $this ->render('login',['model'=> $user ]); 
+            $user -> loadData($request -> getBody());
+            if($user->validate() && $user->save())
+            {
+                return $this ->render('login',['model'=> $user ]); 
+            }
+            return $this ->render('signup',['model'=> $user ]); 
         }
-        return $this ->render('signup',['model'=> $user ]); 
-     }
-     $this -> setLayout('auth');
-     return $this ->render('signup',['model'=> $user  ]);
-        
-    
+        $this -> setLayout('auth');
+        return $this ->render('signup',['model'=> $user  ]); 
  }
 
 }

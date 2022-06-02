@@ -1,10 +1,10 @@
 <?php include_once '../views/decoupage/header.php' ;?>
 <?php include_once '../views/decoupage/navbar.php' ;?>
-<main>
-    <div id="declaration" class=" container-fluid d-flex align-items-center justify-content-center h-100 m-5"  >
-        <div>
-             <h1 class="m-5"> Bienvenu cher client</h1>
-            <h4 class="ms-5"> choisir l'état de votre objet !</h4>
+<main class="vh-100 ">
+    <div  class=" container-fluid d-flex align-items-center justify-content-center h-100 mt-5"  >
+        <div class="text-center">
+             <h1 class=""> Bienvenu cher client</h1>
+            <h4 class=""> choisir l'état de votre objet !</h4>
             <div class="row">
                 <button class="  col btn btn-success m-3 " onclick="showmodel();">trouvé </button>
                 <button class=" col btn btn-danger m-3 " onclick="showmodel();"> Perdu </button>
@@ -97,15 +97,13 @@
         <div class="input-group mb-1 ">
             <input  type="file" class="form-control " aria-label="With textarea" name="myfile"></input>
         </div> 
-  <div class="container d-flex justify-content-center m-3">     
+         <div class="container d-flex justify-content-center m-3">     
             <input type="hidden" class="" name="fk_user" value= <?php   echo  $_SESSION['id'];    ?>>
         </div>
         <div class="container d-flex justify-content-center m-3">     
             <input type="submit" class="btn btn-warning text-dark" name="submit">
         </div>
-      
     </form>
-
 </div>  
 </main>
 <script src="js/scripts.js"></script>
