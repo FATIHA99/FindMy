@@ -43,10 +43,8 @@
                                 <input type="submit" value="sign up " class="btn text-white btn-block btn-warning" name="submit">
                             </form>
                         </div>
-                    
-
                 </div>
-            </div>
+               </div>
             </div>
     </main>
 

@@ -1,10 +1,10 @@
 <div class="container-fluid d-flex justify-content-center ">  
-       <form action="" method="POST" id="informationsTrouve" class="bg-light container border-3 col-lg-6 col-12 border-start border-success " style="display:none; position: absolute; top: 15%; ">
+       <form enctype="multipart/form-data" action="" method="POST" id="informationsTrouve" class="bg-light container border-3 col-lg-6 col-12 border-start border-success " style=" position: absolute; top: 15%; ">
        <h3> préciser :</h3>
-        <input type="button" class="btn-close" aria-label="Close" onclick="btnCloseModel()" style="float:right">
-<!-- declaration -->
-        <div class="row">
-           <label class="p-0">&#10038; declaration :</label>
+       <a href="/declaration" type="button" class="btn-close" aria-label="Close" style="float:right"> </a>
+<!-- declaration -->   <label class="p-0">&#10038; declaration :</label>
+        <div class="row ms-3">
+        
             <div class="form-check ">
                 <input class="form-check-input " type="radio" name="declaration" id="exampleRadios1 " value="public" checked >
                 <label class="form-check-label " for="exampleRadios1 ">
@@ -40,7 +40,7 @@
             <div class="py-3 col ">
                 <label>  &#10038;  Date de perd  :</label>
                 <br>
-                <input type="date" class="p-1 border border-warning" name="dateDePerd">
+                <input type="date" class="p-1 border border-warning" name="dateDeTrouve">
             </div>
 <!-- ville  -->
        <div class="col">
@@ -86,7 +86,7 @@
 <!-- image -->
         <label>  &#10038; image :</label>
         <div class="input-group mb-1 ">
-            <input  type="file" class="form-control " aria-label="With textarea" name="myfile"></input>
+            <input  type="file" class="form-control " aria-label="With textarea" name="image"></input>
         </div> 
          <div class="container d-flex justify-content-center m-3">     
             <input type="hidden" class="" name="fk_user" value= <?php   echo  $_SESSION['id'];    ?>>

@@ -1,8 +1,8 @@
 <!-- MODEL de perd  -->
 <div class="container-fluid d-flex justify-content-center ">  
-       <form enctype="multipart/form-data" action="" method="POST" id="informations" class="bg-light container border-3 col-lg-6 col-12 border-start border-danger " style="display:none; position: absolute; top: 15%; ">
+       <form enctype="multipart/form-data" action="" method="POST" id="informations" class="bg-light container border-3 col-lg-6 col-12 border-start border-danger " style=" position: absolute; top: 15%; ">
        <h3> préciser :</h3>
-        <input type="button" class="btn-close" aria-label="Close" onclick="btnCloseModel()" style="float:right">
+        <a href="/declaration" type="button" class="btn-close" aria-label="Close" style="float:right"> </a>
 <!-- declaration -->
         <div class="row" style=" visibility:hidden ;">
            <label class="p-0">&#10038;declaration :</label>

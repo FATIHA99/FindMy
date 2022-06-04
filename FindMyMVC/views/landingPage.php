@@ -20,15 +20,20 @@
             </div>
         </div>
     </nav>
-    <main>
+    <main> 
+          <header class="masthead " style="position: relative;" >
+    <video class="bg-video" playsinline="playsinline" autoplay="" muted="" loop="" style="width:100% ; height:50%;    ">
+        <source src="assets/lostt.mp4" type="video/mp4"  />
+    </video>
     <!-- Masthead-->
-    <header class="masthead">
-        <div class="container">
+ 
+        <div class="  container text-center vedio-text mt-5"  style=" opacity: 2;"> 
             <div class="masthead-subheading "> <h1 class="text-white">Bienvenu a  FindMy!</h1> </div>
-            <div class="masthead-heading text-uppercase ">
-                <h3 class="text-white">si vous avez perdu votre objet ? FindMy vous aide à le retrouver en quelques clics !</h3>
+            <div class="masthead-heading ">
+                <h3 class="text-white " style="font-family: 'Architects Daughter', cursive;">
+                si vous avez perdu votre objet ? FindMy vous aide à le retrouver en quelques clics ! </h3>
             </div>
-            <a class="btn btn-warning btn-xl text-uppercase" href="/login">Entrer</a>
+            <a class="btn btn-warning btn-xl text-uppercase mb-5 ms-4 text-light  " href="/login" style="width: max-content; height:10%;">Entrer a FindMy </a>
         </div>
     </header>
     <!-- Services-->

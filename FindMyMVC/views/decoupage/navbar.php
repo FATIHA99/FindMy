@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark  sticky-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top">
                 <h6 class="text-warning"> <img src="assets/img/logos/search1.png  " class="w-25 h-25" alt="..." />FindMy</h6>
