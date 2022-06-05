@@ -5,9 +5,9 @@
             <a class="navbar-brand" href="#page-top">
                 <h4 class="text-warning">  <img src="assets/img/logos/search1.png  " alt="..." />FindMy</h4>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              
+            <i class="bi bi-list"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav  ms-auto py-4 py-lg-0">
@@ -17,19 +17,19 @@
         </div>
     </nav>
     <main class="content">
-            <div class="row d-flex justify-content-center align-items-center  mb-5">
+            <div class="row d-flex justify-content-center align-items-center  my-5">
             <?php include_once '../views/decoupage/svgLogin.php' ;?>
                 <div class="col-md-6 contents">
                     <div class="row justify-content-center">
                         <div class="col-md-10 p-5  ">
-                            <div class="mb-4">
-                                <h1 class="text-warning fs-1 text-uppercase">  Page de connexion </h1>
-                                <p class="mb-4"> vous avez perdu votre objet !! ne vous inquiétez pas FindMy peut vous aider</p>
+                            <div>
+                                <h1 class="text-warning text-uppercase"> Page de connexion </h1>
+                                <!-- <p class="mb-4"> vous avez perdu votre objet !! ne vous inquiétez pas FindMy peut vous aider</p> -->
                             </div>
                                     <?php $form= \app\core\form\Form :: begin('','POST') ?>
                                     <?php echo $form -> field($model,'username') ?> 
                                     <?php echo $form -> field($model,'user_password') -> passwordField() ?>
-                                <div class="d-flex mb-5 align-items-center my-4">
+                                <div class="d-flex mb-5 align-items-center my-3">
                                    <input type="checkbox" checked="checked" class="me-4" />
                                     <span class="caption">Remember me</span>
                                     <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>

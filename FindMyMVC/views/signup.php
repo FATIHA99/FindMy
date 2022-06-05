@@ -8,8 +8,8 @@
                 <h4 class="text-warning">
                 <img src="assets/img/logos/search1.png  " alt="..." />FindMy</h4>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+         
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -27,8 +27,8 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10 pt-5  ">
                             <div class="mb-4">
-                                <h1 class="text-warning fs-1 ">s'inscrire </h1>
-                                <p class="mb-4"> vous avez perdu votre objet !! ne vous inquiétez pas FindMy peut vous aider</p>
+                                <h1 class="text-warning fs-1 mt-2  text-uppercase">s'inscrire </h1>
+                            
                             </div>
                             <form action="#" method="post">
                                 <div class="form-group first">

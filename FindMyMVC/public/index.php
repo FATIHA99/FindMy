@@ -6,6 +6,7 @@ use app\controllers\mesDeclarations;
 use app\controllers\DeclarationPerdu;
 use app\controllers\DeclarationTrouve;
 use app\controllers\mesDeclarationsTrouve;
+use app\controllers\statistique;
 
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -28,21 +29,15 @@ $app->router->get('/', [new SiteController(), 'landingPage']);
 $app->router->get('/login', [AuthController::class, 'login']);
 $app->router->post('/login', [AuthController::class, 'login']);
 // !sign up
-
 $app->router->get('/signup', [AuthController::class, 'signup']);
 $app->router->post('/signup', [AuthController::class, 'signup']);
-
 // !home
-
 $app->router->get('/home', [SiteController::class, 'home']);
 $app->router->post('/home', [SiteController::class, 'home']);
-
 // ! ajouter declaration Perdu
-
 $app->router->get('/DeclarationPerdu', [DeclarationPerdu::class, 'addObjetPerdu']);
 $app->router->post('/DeclarationPerdu', [DeclarationPerdu::class, 'addObjetPerdu']);
 // ! ajouter declaration Trouve
-
 $app->router->get('/DeclarationTrouve', [DeclarationTrouve::class, 'addObjetTrouve']);
 $app->router->post('/DeclarationTrouve', [DeclarationTrouve::class, 'addObjetTrouve']);
 
@@ -69,5 +64,9 @@ $app->router->post('/deleteObjetPerdu', [new mesDeclarations(), 'delete']);
  
 $app->router->get('/deleteObjetTrouve', [new mesDeclarationsTrouve(), 'delete']);
 $app->router->post('/deleteObjetTrouve', [new mesDeclarationsTrouve(), 'delete']);
+// ! statistique 
+ 
+$app->router->get('/statistique', [new statistique(), 'statistique']);
+$app->router->post('/statistique', [new statistique(), 'statistique']);
 
 $app->run();
