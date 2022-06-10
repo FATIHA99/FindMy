@@ -54,7 +54,7 @@
                     <p><i class="fas fa-home me-3  text-dark"></i>  Maroc-youssoufia, YOUCODE </p>
                     <p><i class="fas fa-envelope me-3 text-dark"></i> fatihhaa27@gmail.com</p>
                     <p><i class="fas fa-phone me-3 text-dark"></i> + 212616128083</p>
-                    <p><i class="fas fa-print me-3 text-dark"></i> + 01 234 567 89</p>
+                 
                 </div>
             </div>
         </div>

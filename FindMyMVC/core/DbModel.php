@@ -84,6 +84,18 @@ abstract class DbModel extends Model
        return  $this->dataList = $statement->fetchAll();
     }
 
+
+    // for update
+
+    public function selectobjects(int $id)
+    {
+        $tableName = $this->tableName();
+        $statement = self::prepare("SELECT * FROM $tableName where id = $id");
+        $statement->execute();
+      
+       return  $this->dataList = $statement->fetchAll();
+    }
+
   // ! delete  
    
   public function delete(int $id)
@@ -95,20 +107,32 @@ abstract class DbModel extends Model
   }
 
   
-   // public function update(int $id)
-    // {
-    //     $tableName = $this->tableName();
-    //     $attributes = $this->attributes();
-    //     $params = array_map(fn($attr) => "$attr=:$attr", $attributes );
-    //     $statement = self::prepare("UPDATE $tableName SET  
-    //                ".implode(',', $params)." WHERE id = $id");
-    //     foreach($attributes as $attribute){
-    //         $statement->bindValue(":$attribute", $this->{$attribute});
-    //     }
+   public function update(int $id)
+    {
+        $tableName = $this->tableName();
+        $attributes = $this->attributes();
+        // var_dump($attributes);
+        // exit;
+        $params = array_map(fn($attr) => "$attr=:$attr", $attributes );
+        $statement = self::prepare("UPDATE $tableName SET  
+                   ".implode(',', $params)." WHERE id = $id");
+        foreach($attributes as $attribute){
+            $statement->bindValue(":$attribute", $this->{$attribute});
+        }
 
-    //     $statement->execute();
-    //     return true;
-    // }
+        $statement->execute();
+        return true;
+    }
+
+// ! statistique 
+
+    public function countRow()
+    {
+        $tableName = $this->tableName();
+        $statement = self::prepare("SELECT count(*) as countRow FROM $tableName");
+        $statement->execute();
+        return  $statement -> fetch();
+    }
  
 
 }

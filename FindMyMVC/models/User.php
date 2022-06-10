@@ -11,6 +11,7 @@ class User extends DbModel
     public int $id =0;
     public string $username = '';
     public string $user_password = '';
+    public int $fk_user_role = 0;
     public string $confirmPassword = '';
     public function tableName(): string
     {

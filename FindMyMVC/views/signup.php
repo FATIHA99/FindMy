@@ -40,7 +40,7 @@
                                 <div class="form-group last mb-4">
                                     <?php echo $form -> field($model,'confirmPassword') -> passwordField()?>
                                 </div>
-                                <input type="submit" value="sign up " class="btn text-white btn-block btn-warning" name="submit">
+                                <input type="submit" value="s'inscrire " class="btn text-white btn-block btn-warning" name="submit">
                             </form>
                         </div>
                 </div>

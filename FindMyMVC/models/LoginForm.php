@@ -39,7 +39,6 @@ class LoginForm extends Model
           $_SESSION['user']=$fatiha->username;
           $_SESSION['id']=$fatiha->id;
           return true ;
-
     }
 
 }

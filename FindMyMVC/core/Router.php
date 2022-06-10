@@ -30,7 +30,7 @@ class Router
     {   
         $path = $this->request->getPath();
         $method = $this->request->method();
-        $callback = $this->routes[$method][$path] ?? false;
+        $callback = $this->routes[$method][$path] ?? false; // controller 
 
         if ($callback === false)
         {
@@ -38,26 +38,27 @@ class Router
             $this->response->setStatusCode(404);
             return $this->renderView("_404");
         }
-
-        if(is_string($callback))
+//    return la page sans controller 
+        if(is_string($callback)) 
         {
             return $this->renderView($callback);
         }
-
+ 
         if(is_array($callback))
         {
-            //class to object
-            Application::$app->controller = new $callback[0]();
+            //class to object 
+            // to instance controller 
+            Application::$app->controller = new $callback[0](); 
+
             $callback[0] = Application::$app->controller;
         }
-        return call_user_func($callback, $this->request,$this -> response);
-
+        return call_user_func($callback, $this->request);
     }
 
     public function renderView($view, $params = []) 
     {
-        $layoutContent = $this->layoutContent();
-        $viewContent = $this->renderOnlyView($view, $params);
+         $layoutContent = $this->layoutContent(); // MAIN
+        $viewContent = $this->renderOnlyView($view, $params); //LOGIN CODE 
         return str_replace('{{content}}', $viewContent, $layoutContent);
         // include_once Application::$ROOT_DIR."/views/$view.php";
     }

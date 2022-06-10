@@ -12,12 +12,20 @@ class AuthController extends Controller
 {
 // ! login 
     public function login(Request $request )
-    {
+    { 
+        
+        $user=new User();
         $loginForm = new LoginForm();
         if($request -> isPost()){
             $loginForm-> loadData($request -> getBody());
             if($loginForm -> validate() && $loginForm -> login())
             { 
+                $FindMyUser=$user ->findOne(['username'=>  $loginForm->username]);
+                if($FindMyUser->fk_user_role===2)
+                {
+                    Application::$app->response->redirect('/statistique');
+                    return ;
+                }
                 Application::$app->response->redirect('/home');
 
                return ;

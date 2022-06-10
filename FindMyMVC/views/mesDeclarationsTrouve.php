@@ -1,11 +1,8 @@
 <?php include_once '../views/decoupage/header.php' ;?>
 <?php include_once '../views/decoupage/navbar.php' ;?>
-
 <main>
-
-
 <div class=" container  d-flex flex-column  justify-content-center align-items-center">
-    <div><h1 class="mb-5 text-decoration-underline">Mes declarations</h1></div>
+<h1 class="text-success text-center ">déclarations des objets trouvés</h1>
     <div class="">
      
         <a  href="/mesDeclarations" class="btn btn-danger"> voir les  déclarations des objets perdu </a>
@@ -17,13 +14,13 @@
             <!-- table  -->
                 <div class="table-responsive">
                 <div id="ObjetsPerdu" > 
-                         <h1 class="text-success text-center ">déclarations des objets trouvés</h1>
+                      
                     <table class="table custom-table" >
                         <thead>
                             <tr>
                                 <th> </th>
                                 <th scope="col">Photo</th>
-                                <th scope="col">declaration</th>
+                                <!-- <th scope="col">declaration</th> -->
                                 <th scope="col">Objet</th>
                                 <th scope="col">Categorie</th>
                                 <th scope="col">Date de perd</th>
@@ -31,6 +28,7 @@
                                 <th scope="col">Adresse</th>
                                 <!-- <th scope="col">Details</th> -->
                                 <th scope="col">Telephone</th>
+                                <th scope="col">disponibilité</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,13 +40,13 @@
                                 </button>
                                 </td>
                                 <td><img src="files/<?= $val['image']?>" style="width: 80px;  height: 80px;" class="rounded-circle" alt="image d'objet" ></td>
-                                <td class="p-4"> <?= $val['declaration'] ?></td>
+                        
                                 <td class="p-4"> <?= $val['objet'] ?></td>
                                 <td class="p-4"> <?= $val['categorie'] ?></td>
                                 <td class="p-4"> <?= $val['dateDeTrouve'] ?></td>
                                 <td class="p-4"> <?= $val['ville'] ?></td>
                                 <td class="p-4"> <?= $val['adresse'] ?></td>
-                                <td class="p-4"> <?= $val['details'] ?></td>
+                                <!-- <td class="p-4"> <?= $val['details'] ?></td> -->
                                 <td class="p-4"> <?= $val['tele'] ?></td>
                                 <td class="p-4"> <?= $val['despo'] ?></td>
                                 <td class="p-4">
@@ -107,7 +105,7 @@
     <form id="informations" class="bg-light container p-3 border-3 col-lg-6 col-12 border-start border-warning " style="display: none; position: absolute; top: 35%; ">
 
        <input  value ="voir" type="button" class="btn-close" aria-label="Close" onclick="btnCloseModel()" style="float:right">
-       <h3> préciser :</h3>
+       <h3> Remplissez les informations  :</h3>
        <label> &#10038; declaration :</label>
        <div class="form-check ">
            <input class="form-check-input " type="radio" name="exampleRadios " value="option1 " checked>
@@ -122,7 +120,7 @@
            </label>
 
        </div>
-       <div class="py-3 "> <label>  &#10038; c'est quoi ?  :</label>
+       <div class="py-3 "> <label>  &#10038; objet  :</label>
            <input type="text" class="p-1 border border-warning ">
        </div>
         <label>  &#10038; Catégorie :</label>

@@ -1,12 +1,24 @@
 <?php 
 namespace app\controllers;
 use app\core\Controller;
+use app\core\Request;
+use app\models\objetPerdu;
+use app\models\objetTrouve;
+
 class statistique extends Controller
 {
     // ! for the landing page
-    public function statistique()
+    public function statistique(Request $request)
     {   
-          $this -> setLayout('sidbar');
-        return $this->render('statistique');
+         $objetPerdu = new  objetPerdu();
+         $objetTrouve = new  objetTrouve();
+        if($request ->  isGet())
+        {
+            $this -> setLayout('sidbar');
+                return $this->render('statistique',['count'=> $objetPerdu->countRow(),'countT'=> $objetTrouve->countRow()]);  
+        }
+      
     }
+   
+
 }

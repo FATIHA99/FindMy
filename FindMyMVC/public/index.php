@@ -7,6 +7,8 @@ use app\controllers\DeclarationPerdu;
 use app\controllers\DeclarationTrouve;
 use app\controllers\mesDeclarationsTrouve;
 use app\controllers\statistique;
+use app\controllers\objetsTrouve;
+
 
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -64,9 +66,17 @@ $app->router->post('/deleteObjetPerdu', [new mesDeclarations(), 'delete']);
  
 $app->router->get('/deleteObjetTrouve', [new mesDeclarationsTrouve(), 'delete']);
 $app->router->post('/deleteObjetTrouve', [new mesDeclarationsTrouve(), 'delete']);
+// !update objet perdu 
+$app->router->get('/updateDecPerdu', [new DeclarationPerdu(), 'update']);
+$app->router->post('/updateDecPerdu', [new DeclarationPerdu(), 'update']);
+
+
+// TODO ADMIN TASKS
+
 // ! statistique 
- 
 $app->router->get('/statistique', [new statistique(), 'statistique']);
 $app->router->post('/statistique', [new statistique(), 'statistique']);
-
+// !objetsTrouve
+$app->router->get('/objetsTrouve', [new objetsTrouve(), 'objetsTrouve']);
+$app->router->post('/objetsTrouve', [new objetsTrouve(), 'objetsTrouve']);
 $app->run();

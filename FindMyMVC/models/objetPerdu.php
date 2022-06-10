@@ -39,12 +39,16 @@ class objetPerdu extends DbModel
         return parent::delete($matricule);
     }
 
-// ! select one 
-
-
-    public function select($id)
+    // ! update 
+    public function update($id)
     {
-      return parent::select($id);
+        return parent::update($id);
+    }
+
+// ! select one 
+    public function selectobjects($i)
+    {
+      return parent::selectobjects($i);
     }
 // ! validation  rules 
     public function rules(): array

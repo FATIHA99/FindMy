@@ -4,7 +4,7 @@ namespace app\core;
 
 class Request
 {
-
+//  ! return the path like  /login 
     public function getPath()
     {
 
@@ -19,6 +19,7 @@ class Request
         return $path;
     }
 
+//  !  get or post 
     public function method()
     {
         return strtolower($_SERVER['REQUEST_METHOD']);

@@ -2,9 +2,9 @@
        <form enctype="multipart/form-data" action="" method="POST" id="informationsTrouve" class="bg-light container border-3 col-lg-6 col-12 border-start border-success " style=" position: absolute; top: 15%; ">
        <h3> préciser :</h3>
        <a href="/declaration" type="button" class="btn-close" aria-label="Close" style="float:right"> </a>
-<!-- declaration -->   <label class="p-0">&#10038; declaration :</label>
-        <div class="row ms-3">
-        
+<!-- declaration -->   
+        <div class="row ms-3 d-none">
+        <label class="p-0">&#10038; declaration :</label>
             <div class="form-check ">
                 <input class="form-check-input " type="radio" name="declaration" id="exampleRadios1 " value="public" checked >
                 <label class="form-check-label " for="exampleRadios1 ">

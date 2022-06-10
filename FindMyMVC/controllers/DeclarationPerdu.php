@@ -22,4 +22,47 @@ class DeclarationPerdu extends Controller
         }
         return $this->render('DeclarationPerdu', ['declaration' => $objetPerdu]);
     }
+    // ! update 
+    public function update(Request $request)
+    {
+        $objetperdu = new objetPerdu();
+        //  par get
+        if($request->isGet())
+        {
+            $objetperdu -> loadData($request -> getBody());
+            $objetperdu -> selectobjects($objetperdu->id);
+            $objetperdu -> loadData($objetperdu->dataList[0]);
+
+            $params=[
+            'model' =>$objetperdu
+            ];
+
+            return $this ->render('updateDecPerdu',$params);  
+        }
+         //  par post 
+        if($request->isPost())
+        {
+            // / $data = $request->getBody();
+            // if(empty($data['image'])) {
+            // }
+            // print_r($request->getBody());
+            // die();
+            $objetperdu->loadData($request->getBody());
+
+            if ($objetperdu->update($objetperdu->id)){
+                // Application::$app->session->sefFlash('success', 'Thanks for updating Student');
+                Application::$app->response->redirect('mesDeclarations');
+            }
+        
+            return $this->render('updateDecPerdu', [
+                'model' => $objetperdu
+            ]);
+        }
+        return $this->render('updateDecPerdu', [
+            'model' => $objetperdu
+        ]);
+
+    
+    }
+
 }

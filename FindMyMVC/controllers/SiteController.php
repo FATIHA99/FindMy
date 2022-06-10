@@ -5,6 +5,7 @@ use app\core\Controller;
 use app\core\Request;
 use app\models\objetPerdu;
 
+
 class SiteController extends Controller
 {
 // ! for the landing page 
@@ -21,6 +22,9 @@ class SiteController extends Controller
             return $this->render('home', ['objets' => $objetsPerdu->selectAll()]);
         }
     }
+
+   
+    
     public function Declaration()
     {
         return $this->render('declaration');

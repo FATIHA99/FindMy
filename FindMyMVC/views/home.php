@@ -1,5 +1,8 @@
 <?php include_once '../views/decoupage/header.php' ;?>
-    <?php include_once '../views/decoupage/navbar.php' ;?>
+    <?php include_once '../views/decoupage/navbar.php' ;
+  
+    ?>
+    
     <div class="SEARCH   m-2 bg-light sticky-top d-flex flex-column  col-11 col-lg-2 rounded" style="top:125px; z-index: 3; ">
         <h5 class="text-decoration-underline m-2"> <?php   echo  $_SESSION['user'];    ?>  </h5>
         <div class="d-flex align-items-center border bg-white px-3  m-1 ">
@@ -27,14 +30,7 @@
             <option value="3 ">tanget</option>
           </select>
         </div>
-        <div class="d-flex align-items-center border bg-white px-3 m-1">
-        <i class="bi bi-box2"></i>
-            <select class="form-select border-0 " aria-label="Default select example ">
-            <option selected>Toutes les objets </option>
-            <option value="1 ">trouvé</option>
-            <option value="2 ">Perdu</option>
-          </select>
-        </div>
+     
     </div>
 <div>
     <?php  foreach($objets as $val ){ ?>
@@ -65,7 +61,9 @@
         </div>
     </div>
  <?php }  ?>
+
 </div>
+<?php include_once '../views/decoupage/footer.php' ;?>
 
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
