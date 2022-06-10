@@ -26,7 +26,7 @@
                                 <h1 class="text-warning text-uppercase"> Page de connexion </h1>
                                 <!-- <p class="mb-4"> vous avez perdu votre objet !! ne vous inquiétez pas FindMy peut vous aider</p> -->
                             </div>
-                                    <?php $form= \app\core\form\Form :: begin('','POST') ?>
+                                    <?php $form= \app\core\form\Form::begin('','post') ?>
                                     <?php echo $form -> field($model,'username') ?> 
                                     <?php echo $form -> field($model,'user_password') -> passwordField() ?>
                                 <div class="d-flex mb-5 align-items-center my-3">
@@ -35,7 +35,7 @@
                                     <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
                                 </div>
                               <button type="submit"  class=" w-100 btn text-white btn-block btn-warning text-decoration-none pt-2  fw-bold"> connexion</button>
-                                <?php $form= \app\core\form\Form :: end() ?>
+                                <?php $form= \app\core\form\Form::end() ?>
 
                         </div>
                     </div>

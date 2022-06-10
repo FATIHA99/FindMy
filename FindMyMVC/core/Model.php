@@ -89,7 +89,7 @@ abstract class Model
     public function Error(string $attribute, string $message)
     {
        
-        $this->errors[$attribute][ ] = $message;
+        $this->errors[$attribute][] = $message;
     }
     public function errorMessages() 
     {

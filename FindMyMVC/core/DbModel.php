@@ -24,10 +24,10 @@ abstract class DbModel extends Model
         $statement = self::prepare("INSERT INTO $tableName (".implode(',', $attributes).")  VALUES (".implode(',', $params).") ");
         foreach($attributes as $attribute)
         { 
-            if($attribute === "typeImg")
-            {
-                $this->{$attribute}=$_FILES['typeImg']['type'];
-            }
+            // if($attribute === "typeImg")
+            // {
+            //     $this->{$attribute}=$_FILES['typeImg']['type'];
+            // }
           
 
             // if($attribute === "nameImg")

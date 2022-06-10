@@ -32,7 +32,7 @@ class Field
     {
         return sprintf('
           
-                <label class="form-label ">%s</label> 
+                <label class="form-label">%s</label> 
               <div class="form-group">
                 <input type="%s" name="%s" value="%s" class="form-control%s"/>
                 <div class="invalid-feedback">%s</div>
@@ -42,7 +42,7 @@ class Field
             $this->type,
             $this->attribute, 
             $this->model->{$this->attribute},
-            $this->model->hasError($this->attribute) ? 'is-invalid' : '',
+            $this->model->hasError($this->attribute) ? ' is-invalid' : '',
             $this->model->getFirstError($this->attribute)
         );
     }

@@ -8,6 +8,7 @@ use app\controllers\DeclarationTrouve;
 use app\controllers\mesDeclarationsTrouve;
 use app\controllers\statistique;
 use app\controllers\objetsTrouve;
+use app\controllers\messages;
 
 
 
@@ -69,6 +70,9 @@ $app->router->post('/deleteObjetTrouve', [new mesDeclarationsTrouve(), 'delete']
 // !update objet perdu 
 $app->router->get('/updateDecPerdu', [new DeclarationPerdu(), 'update']);
 $app->router->post('/updateDecPerdu', [new DeclarationPerdu(), 'update']);
+// !update objet Trouve 
+$app->router->get('/updateDecTrouve', [new DeclarationTrouve(), 'update']);
+$app->router->post('/updateDecTrouve', [new DeclarationTrouve(), 'update']);
 
 
 // TODO ADMIN TASKS
@@ -79,4 +83,7 @@ $app->router->post('/statistique', [new statistique(), 'statistique']);
 // !objetsTrouve
 $app->router->get('/objetsTrouve', [new objetsTrouve(), 'objetsTrouve']);
 $app->router->post('/objetsTrouve', [new objetsTrouve(), 'objetsTrouve']);
+// !messages 
+$app->router->get('/messages', [messages::class, 'messages']);
+$app->router->post('/messages', [messages::class, 'messages']);
 $app->run();

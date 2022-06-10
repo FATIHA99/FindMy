@@ -15,8 +15,8 @@ class LoginForm extends Model
     {  
         return
          [
-            'username' =>[self::RULE_REQUIRED],
-            'user_password'=>[self::RULE_REQUIRED]
+            'username' => [self::RULE_REQUIRED],
+            'user_password'=> [self::RULE_REQUIRED]
          ];
 
     }
@@ -28,10 +28,11 @@ class LoginForm extends Model
          if(!$fatiha)
          {
              $this->Error('username', 'user not exist ');
+             return false;
          }
          if($this->user_password  !== $fatiha->user_password)
          {
-             $this -> Error('password' ,'Pasword is incorresct');
+             $this -> Error('user_password' ,'Pasword is incorresct');
              return false;
          }
         

@@ -50,9 +50,9 @@
                                 <td class="p-4"> <?= $val['tele'] ?></td>
                                 <td class="p-4"> <?= $val['despo'] ?></td>
                                 <td class="p-4">
-                                <button onclick="showmodel();" class="border-0  bg-white">
+                                <a href="/updateDecTrouve?id=<?= $val['id'] ?>" class=" btn border-0  bg-white">
                                 <i class="bi bi-pen text-success"></i>
-                                </button>
+                                </a>
                                 </td>
                                 <td class="p-4" >
                                   <a href="./deleteObjetTrouve?id=<?php echo $val['id'] ?>"><i class="bi bi-trash3 text-danger"></i></a>

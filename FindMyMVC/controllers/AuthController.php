@@ -21,13 +21,14 @@ class AuthController extends Controller
             if($loginForm -> validate() && $loginForm -> login())
             { 
                 $FindMyUser=$user ->findOne(['username'=>  $loginForm->username]);
-                if($FindMyUser->fk_user_role===2)
+                //  pour l'admin  
+                if($FindMyUser->fk_user_role ===2)
                 {
                     Application::$app->response->redirect('/statistique');
                     return ;
                 }
+                //  pour un utilisateur normal
                 Application::$app->response->redirect('/home');
-
                return ;
             }
         }

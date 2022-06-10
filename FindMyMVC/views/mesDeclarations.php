@@ -2,16 +2,16 @@
 <?php include_once '../views/decoupage/navbar.php' ;?>
  
 <main>
+    
 <div class=" container  d-flex flex-column  justify-content-center align-items-center">
 <h1 class="text-danger text-center pb-4 ">Declaration des objets perdu</h1>
     <div>
-      
         <a  href="/mesDeclarationsTrouve" class="btn btn-success mb-3">voir les declaration trouvé </a>
     </div>
 </div>
 
     <div class="content p-0">
-        <div class="container" >
+        <div class="container">
             <!-- table  -->
                 <div class="table-responsive">
                 <div id="ObjetsPerdu" > 
@@ -35,7 +35,30 @@
 
                             <tr>
 
-
+  <!-- Modal  view-->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel"> <?= $val['objet'] ?></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="col">
+          
+                <img src="files/<?= $val['image']?>"  alt="..." style="width: 56%;">
+            </div>
+            <div class="col">
+            <?= $val['details'] ?>
+            <?= $val['categorie'] ?>
+             </div>
+        </div>
+        <div class="modal-footer">
+          
+        </div>
+      </div>
+    </div>
+  </div>
                             <!--  -->
                                 <td >
                                 <button  class="border-0  bg-white mt-3  text-dark"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" > 
@@ -52,7 +75,7 @@
                                 <!-- <td class="p-4"> <?= $val['details'] ?></td> -->
                                 <td class="p-4"> <?= $val['tele'] ?></td>
                                 <td class="p-4">
-                                <a href="/updateDecPerdu?id=<?= $val['id']   ?>" class=" btn border-0  bg-white">
+                                <a href="/updateDecPerdu?id=<?= $val['id'] ?>" class=" btn border-0  bg-white">
                                 <i class="bi bi-pen text-success"></i>
                                 </a>
                                 </td>
@@ -75,29 +98,7 @@
    </main>
 
 
-   <!-- Modal  view-->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel"> <?= $val['objet'] ?></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="col">
-                <img  src="assets/img/chien.jpg" alt="..." style="width: 56%;">
-            </div>
-            <div class="col">
-            <?= $val['details'] ?>
-      
-             </div>
-        </div>
-        <div class="modal-footer">
-          
-        </div>
-      </div>
-    </div>
-  </div>
+ 
 
 
 <script src="js/scripts.js"></script>

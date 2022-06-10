@@ -12,7 +12,7 @@ class DeclarationPerdu extends Controller
     public function addObjetPerdu(Request $request)
     {
         $objetPerdu = new objetPerdu();
-        if ($request->isPost()) {
+        if ($request->isPost() && $objetPerdu->validate()) {
             $objetPerdu->loadData($request->getBody());
         
             if ($objetPerdu->insertObjetPerdu()) {
@@ -33,6 +33,8 @@ class DeclarationPerdu extends Controller
             $objetperdu -> selectobjects($objetperdu->id);
             $objetperdu -> loadData($objetperdu->dataList[0]);
 
+            $currentImage = $objetperdu->dataList[0]['image'];
+            $_SESSION['current_img'] = $currentImage;
             $params=[
             'model' =>$objetperdu
             ];
@@ -42,12 +44,18 @@ class DeclarationPerdu extends Controller
          //  par post 
         if($request->isPost())
         {
-            // / $data = $request->getBody();
+            $data = $request->getBody();
+            // if(empty($data['image'])) {
+            //     $data['image'] = $currentImage;
+            // };
+            if(empty($data['image'])) {
+                $data['image'] = $_SESSION['current_img'];
+            }
             // if(empty($data['image'])) {
             // }
             // print_r($request->getBody());
             // die();
-            $objetperdu->loadData($request->getBody());
+            $objetperdu->loadData($data);
 
             if ($objetperdu->update($objetperdu->id)){
                 // Application::$app->session->sefFlash('success', 'Thanks for updating Student');

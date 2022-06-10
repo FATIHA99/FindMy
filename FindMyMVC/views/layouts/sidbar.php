@@ -35,7 +35,7 @@
                         <a href="Parents.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Parents</span> </a> --> 
                         <a href="/statistique" class="nav_link"> <i class=' bx bx-line-chart nav_icon '></i> <span class="nav_name fs-5">statistique </span> </a>
                         <a href="/objetsTrouve" class="nav_link"><i class='nav_icon bx bxs-user-detail'></i> <span class=" fs-5 nav_name">declaration privé</span> </a>
-                        <a href="#" class="nav_link"> <i class='bx bxs-message-dots' ></i><span class="nav_name fs-5">contact</span> </a>
+                        <a href="/messages" class="nav_link"> <i class='bx bxs-message-dots' ></i><span class="nav_name fs-5">contact</span> </a>
                 </div>
              </div>
                 <a href="#" class="nav_link">

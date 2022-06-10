@@ -70,13 +70,13 @@
             <textarea class="form-control " aria-label="With textarea" name="details"></textarea>
         </div>
 
-        <!--tele -->
+<!--tele -->
         <label>  &#10038;tele :</label>
         <div class="input-group mb-1 ">
         <input  class="p-1 border border-warning"  type="text" placeholder="telephone " name="tele">
         </div>
 
-           <!-- despo -->
+ <!-- despo -->
            <label>  &#10038;disponibilité </label>
         <div class="input-group mb-1 ">
         <span class="input-group-text "> disponibilité </span>

@@ -21,4 +21,48 @@ class DeclarationTrouve extends Controller
         }
         return $this->render('DeclarationTrouve', ['declaration' => $objetTrouve]);
     }
+
+
+      // ! update 
+      public function update(Request $request)
+      {
+          $objetTrouve = new objetTrouve();
+          //  par get
+          if($request->isGet())
+          {
+              $objetTrouve -> loadData($request -> getBody());
+              $objetTrouve -> selectobjects($objetTrouve->id);
+              $objetTrouve -> loadData($objetTrouve->dataList[0]);
+  
+              $currentImage = $objetTrouve->dataList[0]['image'];
+              $_SESSION['current_img'] = $currentImage;
+              $params=[
+              'model' =>$objetTrouve
+              ];
+  
+              return $this ->render('updateDecTrouve',$params);  
+          }
+         
+          if($request->isPost())
+          {
+              $data = $request->getBody();
+
+              if(empty($data['image'])) {
+                  $data['image'] = $_SESSION['current_img'];
+              }
+              $objetTrouve->loadData($data);
+
+              if ($objetTrouve->update($objetTrouve->id)){
+                  Application::$app->response->redirect('mesDeclarations');
+              }
+              return $this->render('updateDecTrouve', [
+                  'model' => $objetTrouve
+              ]);
+          }
+          return $this->render('updateDecTrouve', [
+              'model' => $objetTrouve
+          ]);
+  
+      
+      }
 }

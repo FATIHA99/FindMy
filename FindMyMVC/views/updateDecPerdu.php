@@ -89,10 +89,10 @@
         <input  class="p-1 border border-warning"  type="text" placeholder="telephone " name="tele" value="<?= $model->tele?>">
         </div>
 <!-- image -->
-       <!--  <label class="form-group">  &#10038; image :</label>
+        <label class="form-group">  &#10038; image :</label>
         <div class="input-group mb-1 ">
-            <input  type="file" class="form-control" aria-label="With textarea" name="image"  value="<?= $model->image?>"></input>
-        </div>  -->
+            <input  type="file" class="form-control" aria-label="With textarea" name="image" ></input>
+        </div> 
         <?= $model->image?>
          <div class="container d-flex justify-content-center m-3">     
             <input type="hidden" class="" name="fk_user" value= <?php  echo  $_SESSION['id'];    ?>>
