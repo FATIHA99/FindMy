@@ -86,4 +86,7 @@ $app->router->post('/objetsTrouve', [new objetsTrouve(), 'objetsTrouve']);
 // !messages 
 $app->router->get('/messages', [messages::class, 'messages']);
 $app->router->post('/messages', [messages::class, 'messages']);
+// !contact 
+$app->router->get('/#contact', [messages::class, 'addMsg']);
+$app->router->post('/#contact', [messages::class, 'addMsg']);
 $app->run();
