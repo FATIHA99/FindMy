@@ -13,7 +13,7 @@ class messagess extends DbModel
     public string $name='';
     public string $email='';
     public string $tele='';
-
+    public string $msg='';
     public function tableName(): string
     {
         return 'messages';
@@ -44,7 +44,7 @@ public function rules(): array
   // ! table des attributs
   public function attributes(): array
   {
-      return ['id','name', 'email', 'tele'];
+      return ['id','name', 'email', 'tele','msg'];
   }
     
 }

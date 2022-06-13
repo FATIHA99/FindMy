@@ -10,11 +10,21 @@ class mesDeclarations extends Controller
 // ! affichage
     public function mesDeclarations(Request $request)
     {
-        $id=intval( $_SESSION['id']);
+         
+        if(isset( $_SESSION['id']))
+        {
+            $id=intval($_SESSION['id']); 
+        } 
+  
         $objetsPerdu = new objetPerdu();
         if($request->isGet())
-        {  
-            return $this->render('mesDeclarations', ['mesDeclarations' => $objetsPerdu->select($id)]);
+        {   if(! isset( $_SESSION['login']))
+            {
+                 return $this -> render('landingPage');
+            } 
+            else{
+                return $this->render('mesDeclarations', ['mesDeclarations' => $objetsPerdu->select($id)]);
+            }
         }
     }
 // ! delete 

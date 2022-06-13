@@ -5,7 +5,7 @@ namespace app\core;
 class Database
 {
     public \PDO $pdo;
-
+// !connexion
     public function __construct(array $config)
     {
         $dsn = $config['dsn'] ?? '';

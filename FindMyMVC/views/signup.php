@@ -9,7 +9,6 @@
                 <img src="assets/img/logos/search1.png  " alt="..." />FindMy</h4>
             </a>
             <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-         
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -50,7 +49,5 @@
 
     <?php include_once '../views/decoupage/footer.php' ;?>
     <script src="fontawesome-v6/js/all.min.js"></script>   
-
 </body>
-
 </html>

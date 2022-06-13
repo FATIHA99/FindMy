@@ -29,7 +29,7 @@
          <div class="col"> 
              <label>  &#10038; Catégorie :</label>
                 <select class="form-select" name="categorie">
-                <option> categories</option>
+                <!-- <option> categories</option> -->
                 <option> Personne</option>
                 <option> animal</option>
                 <option> Objet</option>

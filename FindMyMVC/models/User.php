@@ -48,29 +48,9 @@ class User extends DbModel
         return[
             'username'=>'nom de utilisateur ',
             'user_password'=>'mot de passe ',
+            'confirmPassword'=>'Confirmation ',
 
         ];
     } 
   
-
-     // public function updateUser()
-    // {
-    //     return parent::update();
-    // }
-
-    // public function selectAll()
-    // {
-    //     return parent::selectAll();
-    // }
-
-    // public function select()
-    // {
-    //     return parent::select();
-    // }
-
-    // public function delete()
-    // {
-    //     return parent::delete();
-    // }
-
 }

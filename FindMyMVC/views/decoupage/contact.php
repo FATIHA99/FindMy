@@ -2,7 +2,7 @@
 <section class="page-section" id="contact">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Contacter-nous </h2>
+                <h2 class="section-heading text-uppercase m-5">Contacter-nous </h2>
                 <h3 class="section-subheading text-muted"> Vos messages nous intéressent</h3>
             </div>
         
@@ -48,8 +48,8 @@
                     <div class="text-center text-danger mb-3">Erreur lors de l'envoi du message !</div>
                 </div>
                 <!-- Submit Button-->
-                <input type="submit" name="submit">
-                <!-- <div class="text-center"><button class="btn btn-warning  btn-xl text-uppercase disabled" id="submitButton" type="submit">Envoyer le message </button></div> -->
+            
+                <div class="text-center"><button name="submit" class="btn btn-warning  btn-xl text-uppercase" id="submitButton" type="submit">Envoyer le message </button></div>
             </form>
         </div>
     </section>

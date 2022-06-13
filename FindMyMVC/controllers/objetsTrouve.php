@@ -10,9 +10,15 @@ class objetsTrouve extends Controller
         $objetsTrouve = new objetTrouve();
         if($request->isGet())
         {  
-            $this -> setLayout('sidbar');
-            return $this->render('objetsTrouve',['objetTrouve' => $objetsTrouve->selectAll()
+            if(! isset( $_SESSION['login']))
+            {
+                 return $this -> render('landingPage');
+            } 
+            else{
+                $this -> setLayout('sidbar');
+                return $this->render('objetsTrouve', ['objetTrouve' => $objetsTrouve->selectAll()
             ]);
+            }
         }
     }
 

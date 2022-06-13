@@ -11,11 +11,23 @@ class mesDeclarationsTrouve extends Controller
 // ! affichage
     public function mesDeclarationsTrouve(Request $request)
     {
-        $id=intval( $_SESSION['id']);
+        
+        if(isset( $_SESSION['id']))
+        {
+            $id=intval($_SESSION['id']); 
+        } 
+  
+
         $objetsTrouve = new objetTrouve();
         if($request->isGet())
         {  
-            return $this->render('mesDeclarationsTrouve', ['mesDeclarationsTrouve' => $objetsTrouve->select($id)]);
+            if(! isset( $_SESSION['login']))
+            {
+                 return $this -> render('landingPage');
+            } 
+            else{
+                return $this->render('mesDeclarationsTrouve', ['mesDeclarationsTrouve' => $objetsTrouve->select($id)]);
+            }
         }
     }
 // ! delete 

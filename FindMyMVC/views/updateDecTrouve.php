@@ -1,6 +1,5 @@
 <?php include_once '../views/decoupage/header.php' ;?>
 <?php include_once '../views/decoupage/navbar.php' ;?>
-
 <!-- MODEL de perd  -->
 <div class="container-fluid d-flex justify-content-center align-items-center " style="height: calc(100vh - 100px);">  
        <form enctype="multipart/form-data" action="" method="POST" id="informations" class="bg-light container border-3 col-lg-6 col-12 border-start border-danger " style=" position: absolute; top: 15%; ">
@@ -24,7 +23,6 @@
         </div>
 <!-- Objet -->
 <input type="hidden"  value="<?=  $model->id ?>" class="p-1 border border-warning" name="id">
-
        <div class="row">
         <div class="py-3  col ">
              <label>  &#10038; le nom  de l'objet :</label> <br>
@@ -32,11 +30,6 @@
         </div>
 <!-- categorie -->
          <div class="col"> 
-           <?php   
-        //     echo "<pre>"; 
-        //    var_dump($model);
-        //      echo "</pre>";
-             ?>
              <label>  &#10038; Catégorie :</label>
                 <select class="form-select" aria-label="Default select example" name="categorie">
                 <option selected > <?=  $model->categorie?></option>
@@ -51,7 +44,7 @@
             <div class="py-3 col ">
                 <label>  &#10038;  Date de perd  :</label>
                 <br>
-                <input type="date" class="p-1 border border-warning" name="dateDePerd" value="<?=  $model->dateDePerd ?>">
+                <input type="date" class="p-1 border border-warning" name="dateDeTrouve" value="<?=  $model->dateDePerd ?>">
             </div>
 <!-- ville  -->
        <div class="col">
@@ -112,7 +105,6 @@
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
-
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>

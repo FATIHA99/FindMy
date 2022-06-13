@@ -33,11 +33,6 @@
         </div>
 <!-- categorie -->
          <div class="col"> 
-           <?php   
-        //     echo "<pre>"; 
-        //    var_dump($model);
-        //      echo "</pre>";
-             ?>
              <label>  &#10038; Catégorie :</label>
                 <select class="form-select" aria-label="Default select example" name="categorie">
                 <option selected > <?=  $model->categorie?></option>
@@ -71,7 +66,6 @@
         </div>
 <!-- adresse -->
         <label>  &#10038; Adresse :</label>
-           
         <div class="input-group ">
             <span class="input-group-text ">Adresse</span>
             <input class="form-control " aria-label="With textarea" name="adresse" value="<?= $model->adresse?>" ></input>
@@ -83,7 +77,7 @@
             <input class="form-control " aria-label="With textarea" name="details"  value="<?= $model->details?>"></input>
         </div>
 
-        <!--tele -->
+<!--tele -->
         <label>  &#10038;tele :</label>
         <div class="input-group mb-1 ">
         <input  class="p-1 border border-warning"  type="text" placeholder="telephone " name="tele" value="<?= $model->tele?>">
@@ -106,7 +100,6 @@
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
-
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@
                     <li class="nav-item"><a class="nav-link " href="/home">ACCUEIL</a></li>
                     <li class="nav-item"><a class="nav-link " href="/declaration">DECLARATION</a></li>
                     <li class="nav-item"><a class="nav-link " href="/mesDeclarations">MES OBJETS</a></li>
-                    <li class="nav-item"><a class="nav-link " href="/login">DECONNEXION</a></li>
+                    <li class="nav-item"><a class="nav-link " href="/logout">DECONNEXION</a></li>
                 </ul>
             </div>
         </div>

@@ -53,7 +53,7 @@ class DeclarationTrouve extends Controller
               $objetTrouve->loadData($data);
 
               if ($objetTrouve->update($objetTrouve->id)){
-                  Application::$app->response->redirect('mesDeclarations');
+                  Application::$app->response->redirect('mesDeclarationsTrouve');
               }
               return $this->render('updateDecTrouve', [
                   'model' => $objetTrouve

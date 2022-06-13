@@ -4,17 +4,14 @@
 <div class=" container  d-flex flex-column  justify-content-center align-items-center">
 <h1 class="text-success text-center ">déclarations des objets trouvés</h1>
     <div class="">
-     
         <a  href="/mesDeclarations" class="btn btn-danger"> voir les  déclarations des objets perdu </a>
     </div>
 </div>
-
     <div class="content p-0">
         <div class="container" >
             <!-- table  -->
                 <div class="table-responsive">
                 <div id="ObjetsPerdu" > 
-                      
                     <table class="table custom-table" >
                         <thead>
                             <tr>
@@ -35,8 +32,20 @@
                         <?php  foreach($mesDeclarationsTrouve as $val) { ?>
                             <tr>
                                 <td >
-                                <button  class="border-0  bg-white mt-3  text-warning"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" > 
-                                <i class="bi bi-eye-fill"></i>
+                                <button  class="border-0  bg-white mt-3  text-dark"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" > 
+                               
+                                <i class="bi bi-eye-fill objetsTrouve" 
+                                data="<?php echo 
+                                  $val['objet']. ','
+                                . $val['dateDeTrouve']. ','
+                                . $val['ville']. ',' 
+                                . $val['adresse']. ','
+                                . $val['details']. ','
+                                . $val['tele']. ',' 
+                                . $val['despo']. ','
+                                . $val['image'];
+                                    ?>"></i>
+                              
                                 </button>
                                 </td>
                                 <td><img src="files/<?= $val['image']?>" style="width: 80px;  height: 80px;" class="rounded-circle" alt="image d'objet" ></td>
@@ -63,14 +72,10 @@
                         </tbody>
                     </table>
                 </div>
-               
-                </div>
+            </div>
         </div>
     </div>
    </main>
-
-
-
 
 <!-- Modal  view-->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -82,90 +87,26 @@
         </div>
         <div class="modal-body">
             <div class="col">
-                <img  src="assets/img/chien.jpg" alt="..." style="width: 56%;">
+                <img  id="myImageID" src="files/" alt="..." style="width: 56%;">
             </div>
             <div class="col">
-            <?= $val['details'] ?>
+            <ul>
+                 <li>hhhg</li>
+                 <li id="details"></li>
+                  <li id="ville"></li>
+                  <li id="adresse"></li>
+                  <li id="tele"></li>
+                  <li id="despo"></li>
+              </ul>
       
              </div>
         </div>
         <div class="modal-footer">
-          
+        <span id="dateDeTrouve"></span>
         </div>
       </div>
     </div>
   </div>
-
-
-
-
-<!-- model informations  update  -->
-
-<div class="container-fluid d-flex justify-content-center align-items-center" >  
-    <form id="informations" class="bg-light container p-3 border-3 col-lg-6 col-12 border-start border-warning " style="display: none; position: absolute; top: 35%; ">
-
-       <input  value ="voir" type="button" class="btn-close" aria-label="Close" onclick="btnCloseModel()" style="float:right">
-       <h3> Remplissez les informations  :</h3>
-       <label> &#10038; declaration :</label>
-       <div class="form-check ">
-           <input class="form-check-input " type="radio" name="exampleRadios " value="option1 " checked>
-           <label >
-               Public 
-           </label>
-       </div>
-       <div class="form-check ">
-           <input class="form-check-input " type="radio" name="exampleRadios "  value="option2 ">
-           <label>
-          Privé
-           </label>
-
-       </div>
-       <div class="py-3 "> <label>  &#10038; objet  :</label>
-           <input type="text" class="p-1 border border-warning ">
-       </div>
-        <label>  &#10038; Catégorie :</label>
-       <select class="form-select form-select-sm " aria-label=".form-select-sm example ">
-       <option> categories</option>
-       <option> Personne</option>
-       <option> animal</option>
-       <option> Objet</option>
-       </select>
-       <div class="py-3 ">
-            <label>  &#10038;  Date de trouve /perd  :</label>
-           <input type="date" class="p-1 border border-warning ">
-       </div>
-
-       <label>  &#10038; Ville :</label>
-       <select class="form-select " aria-label="Default select example ">
-           <option selected>Toutes le maroc </option>
-           <option value="1 ">casablanca </option>
-           <option value="2 ">El jadida</option>
-           <option value="3 ">Agadir</option>
-           <option value="3 ">safi</option>
-           <option value="3 ">fes</option>
-           <option value="3 ">rabat</option>
-           <option value="3 ">tanget</option>
-         </select>
-       <label>  &#10038; Adresse :</label>
-       <div class="input-group ">
-           <span class="input-group-text ">Adresse</span>
-           <textarea class="form-control " aria-label="With textarea "></textarea>
-       </div>
-       <label>  &#10038; details :</label>
-       <div class="input-group mb-1 ">
-           <span class="input-group-text "> plus details </span>
-           <textarea class="form-control " aria-label="With textarea "></textarea>
-       </div>
-       <label>  &#10038; image :</label>
-       <div class="input-group mb-1 ">
-           <input  type="file" class="form-control " aria-label="With textarea "/>
-       </div> 
-
-        <div class="container d-flex justify-content-center m-3">      
-            <input type="submit" class="btn btn-warning text-dark ">
-        </div>
-   </form>
-</div>  
 <script src="js/scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>

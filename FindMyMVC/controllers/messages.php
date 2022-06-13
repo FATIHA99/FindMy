@@ -11,9 +11,16 @@ class messages extends Controller
         $msg = new messagess();
         if($request->isGet())
         {  
-            $this -> setLayout('sidbar');
-            return $this->render('messages',['messages' => $msg->selectAll()
+            if(! isset( $_SESSION['login']))
+            {
+                 return $this -> render('landingPage');
+            } 
+            else{
+                $this -> setLayout('sidbar');
+                return $this->render('messages', ['messages' => $msg->selectAll()
             ]);
+            }
+            
         }
     }
 
@@ -21,16 +28,15 @@ class messages extends Controller
     {
         $msg = new messagess();
         if ($request->isPost()) {
-            // echo "post ";
-            // exit;
             $msg->loadData($request->getBody());
             if ($msg->addMsg()) {
-                return $this->render('landingPage');
-                Application::$app->response->redirect('/landingPage');
+                // return $this->render('contactUs');
+                echo
+                Application::$app->response->redirect('/');
             }
-            return $this->render('landingPage');
+            return $this->render('contactUs');
         }
-        return $this->render('landingPage');
+        return $this->render('contactUs');
     }
 
 }

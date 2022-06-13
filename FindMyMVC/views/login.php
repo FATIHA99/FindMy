@@ -6,7 +6,6 @@
                 <h4 class="text-warning">  <img src="assets/img/logos/search1.png  " alt="..." />FindMy</h4>
             </a>
             <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              
             <i class="bi bi-list"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -21,11 +20,11 @@
             <?php include_once '../views/decoupage/svgLogin.php' ;?>
                 <div class="col-md-6 contents">
                     <div class="row justify-content-center">
-                        <div class="col-md-10 p-5  ">
-                            <div>
+                        <div class="col-md-10 p-5 ">
+                              <div>
                                 <h1 class="text-warning text-uppercase"> Page de connexion </h1>
                                 <!-- <p class="mb-4"> vous avez perdu votre objet !! ne vous inquiétez pas FindMy peut vous aider</p> -->
-                            </div>
+                              </div>
                                     <?php $form= \app\core\form\Form::begin('','post') ?>
                                     <?php echo $form -> field($model,'username') ?> 
                                     <?php echo $form -> field($model,'user_password') -> passwordField() ?>
@@ -36,7 +35,6 @@
                                 </div>
                               <button type="submit"  class=" w-100 btn text-white btn-block btn-warning text-decoration-none pt-2  fw-bold"> connexion</button>
                                 <?php $form= \app\core\form\Form::end() ?>
-
                         </div>
                     </div>
                 </div>

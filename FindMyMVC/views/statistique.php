@@ -12,7 +12,8 @@
           <div class="card-body">
             <div class="d-flex justify-content-between px-md-1">
               <div class="align-self-center">
-              <i class="fa-solid fa-person-circle-question text-danger fa-3x"></i>              </div>
+                 <i class="fa-solid fa-person-circle-question text-danger fa-3x"></i>     
+              </div>
               <div class="text-end">
                 <h3><?= $count['countRow'] ?></h3>
                 <p class="mb-0">Declarations Perdu</p>

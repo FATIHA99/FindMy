@@ -11,8 +11,6 @@ abstract class DbModel extends Model
     public $dataList = [];
     abstract public function tableName(): string;
     abstract public function attributes(): array;
-   
-    // abstract public function  primaryKey(): string;
 
 // ! to insert 
     public function save()
@@ -24,20 +22,6 @@ abstract class DbModel extends Model
         $statement = self::prepare("INSERT INTO $tableName (".implode(',', $attributes).")  VALUES (".implode(',', $params).") ");
         foreach($attributes as $attribute)
         { 
-            // if($attribute === "typeImg")
-            // {
-            //     $this->{$attribute}=$_FILES['typeImg']['type'];
-            // }
-          
-
-            // if($attribute === "nameImg")
-            // {
-            //     $this->{$attribute}="gif";
-            // }
-            // if($attribute === "dataImg")
-            // {
-            //     $this->{$attribute}="gif";
-            // }
             $statement->bindValue(":$attribute", $this->{$attribute});
         }  
         $statement->execute();
@@ -51,7 +35,6 @@ abstract class DbModel extends Model
 // ! find one user
     public  function findOne($where)
     {
-
       $tableName= static::tableName();
       $attributes =array_keys($where);
       $sql=  implode("AND",array_map(fn($attr)=>"$attr=:$attr",$attributes));
@@ -64,7 +47,7 @@ abstract class DbModel extends Model
       return $statement -> fetchObject(static::class);
     }
 
-  // ! to reder all information
+  // ! to render all information
     public function selectAll()
     {
         $tableName = $this->tableName();
@@ -83,10 +66,7 @@ abstract class DbModel extends Model
       
        return  $this->dataList = $statement->fetchAll();
     }
-
-
     // for update
-
     public function selectobjects(int $id)
     {
         $tableName = $this->tableName();
@@ -105,21 +85,17 @@ abstract class DbModel extends Model
       $statement->execute();
       return true;
   }
-
-  
+// !update
    public function update(int $id)
     {
         $tableName = $this->tableName();
         $attributes = $this->attributes();
-        // var_dump($attributes);
-        // exit;
         $params = array_map(fn($attr) => "$attr=:$attr", $attributes );
         $statement = self::prepare("UPDATE $tableName SET  
                    ".implode(',', $params)." WHERE id = $id");
         foreach($attributes as $attribute){
             $statement->bindValue(":$attribute", $this->{$attribute});
         }
-
         $statement->execute();
         return true;
     }

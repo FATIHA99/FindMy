@@ -13,7 +13,6 @@ class AuthController extends Controller
 // ! login 
     public function login(Request $request )
     { 
-        
         $user=new User();
         $loginForm = new LoginForm();
         if($request -> isPost()){
@@ -21,13 +20,13 @@ class AuthController extends Controller
             if($loginForm -> validate() && $loginForm -> login())
             { 
                 $FindMyUser=$user ->findOne(['username'=>  $loginForm->username]);
-                //  pour l'admin  
-                if($FindMyUser->fk_user_role ===2)
+                //pour l'admin  
+                if($FindMyUser->fk_user_role === 2)
                 {
                     Application::$app->response->redirect('/statistique');
-                    return ;
+                    return;
                 }
-                //  pour un utilisateur normal
+                //pour un utilisateur normal
                 Application::$app->response->redirect('/home');
                return ;
             }
@@ -44,12 +43,21 @@ class AuthController extends Controller
             $user -> loadData($request -> getBody());
             if($user->validate() && $user->save())
             {
-                return $this ->render('login',['model'=> $user ]); 
+                Application::$app->response->redirect('/login');
+                // return $this ->render('login',['model'=> $user ]); 
             }
+      
             return $this ->render('signup',['model'=> $user ]); 
         }
-        $this -> setLayout('auth');
+     
         return $this ->render('signup',['model'=> $user  ]); 
  }
+//  ! logout 
+public function logout()
+{
+    Application::$app->logout();
+    Application::$app->response->redirect('/');
+
+}
 
 }

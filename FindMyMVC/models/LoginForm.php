@@ -20,7 +20,15 @@ class LoginForm extends Model
          ];
 
     }
-    
+    public function labels(): array
+    {
+        return[
+            'username'=>'nom de utilisateur ',
+            'user_password'=>'mot de passe ',
+          
+
+        ];
+    } 
 
     public function login()
     {  $user=  new User();
@@ -39,7 +47,8 @@ class LoginForm extends Model
         //   return  Application::$app->login($user);
           $_SESSION['user']=$fatiha->username;
           $_SESSION['id']=$fatiha->id;
-          return true ;
+          $_SESSION['login']=true;
+                    return true ;
     }
 
 }

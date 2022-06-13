@@ -1,9 +1,6 @@
 <?php include_once '../views/decoupage/header.php' ;?>
-    <?php include_once '../views/decoupage/navbar.php' ;
-  
-    ?>
-    
-    <div class="SEARCH   m-2 bg-light sticky-top d-flex flex-column  col-11 col-lg-2 rounded" style="top:125px; z-index: 3; ">
+<?php include_once '../views/decoupage/navbar.php' ;?>
+    <div class="SEARCH   m-2 bg-light sticky-top d-flex flex-column  col-11 col-lg-2 rounded" style="top:90px; z-index: 3; ">
         <h5 class="text-decoration-underline m-2"> <?php   echo  $_SESSION['user'];    ?>  </h5>
         <div class="d-flex align-items-center border bg-white px-3  m-1 ">
         <i class="bi bi-search"></i>
@@ -13,10 +10,8 @@
             <option value="2 ">persone</option>
             <option value="3 ">animal</option>
             <option value="3 ">clefs</option>
-
           </select>
         </div>
-
         <div class="d-flex align-items-center border border-1 bg-white px-3 m-1 " style="height: 5%; " >
         <i class=" me-3 bi bi-geo-alt"></i>
             <select class="form-select border-0 " aria-label="Default select example ">
@@ -30,7 +25,6 @@
             <option value="3 ">tanget</option>
           </select>
         </div>
-     
     </div>
 <div>
     <?php  foreach($objets as $val ){ ?>
@@ -54,13 +48,11 @@
                         <hr>
                         <li ><i class=" me-3 bi bi-calendar-date"></i><?php echo $val['dateDePerd'] ?> <i class=" mx-3 bi bi-geo-alt"></i><?php echo $val['ville'] ?></li>
                     </ul>
-              
-                 
                 </div>
             </div>
         </div>
     </div>
- <?php }  ?>
+ <?php } ?>
 
 </div>
 <?php include_once '../views/decoupage/footer.php' ;?>

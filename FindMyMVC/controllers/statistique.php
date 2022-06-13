@@ -12,10 +12,16 @@ class statistique extends Controller
     {   
          $objetPerdu = new  objetPerdu();
          $objetTrouve = new  objetTrouve();
-        if($request ->  isGet())
+        if($request ->isGet())
         {
-            $this -> setLayout('sidbar');
-                return $this->render('statistique',['count'=> $objetPerdu->countRow(),'countT'=> $objetTrouve->countRow()]);  
+            if(! isset( $_SESSION['login']))
+            {
+                 return $this -> render('landingPage');
+            } 
+            else{
+                $this -> setLayout('sidbar');
+                return $this->render('statistique', ['count'=> $objetPerdu->countRow(),'countT'=> $objetTrouve->countRow()]);
+            }
         }
       
     }

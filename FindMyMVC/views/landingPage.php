@@ -1,5 +1,4 @@
 <?php include_once '../views/decoupage/header.php' ;?>
-
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
@@ -15,7 +14,7 @@
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">a propos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">nos équipe</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contacter-nous</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contactUs">Contacter-nous</a></li>
                 </ul>
             </div>
         </div>
@@ -26,8 +25,7 @@
         <source src="assets/lostt.mp4" type="video/mp4"  />
     </video>
     <!-- Masthead-->
- 
-        <div class="  container text-center vedio-text mt-5"  style=" opacity: 2;"> 
+        <div class=" container text-center vedio-text mt-5"  style=" opacity: 2;"> 
             <div class="masthead-subheading "> <h1 class="text-white">Bienvenu a  FindMy!</h1> </div>
             <div class="masthead-heading ">
                 <h3 class="text-white " style="font-family: 'Architects Daughter', cursive;">
@@ -42,8 +40,7 @@
   <?php include_once '../views/decoupage/about.php';?>
 <!-- team -->
 <?php include_once '../views/decoupage/team.php';?>
-    <!--  contact -->
-    <?php include_once '../views/decoupage/contact.php';?>
+
 </main>
  <?php include_once '../views/decoupage/footer.php';?>
 <!-- bootstrap -->
