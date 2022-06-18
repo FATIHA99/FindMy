@@ -18,14 +18,16 @@ class Database
     public function applyMigrations()
     {
         $this->createMigrationsTable();
-        $appliedMogrations = $this->getAppliedMigrations();
+        $appliedMogrations = $this->getAppliedMigrations(); // RETURN  Array has one  COLUMN MIGRATION
 
         $newMigrations =  [];
-        $files = scandir(Application::$ROOT_DIR.'/migrations');
+        $files = scandir(Application::$ROOT_DIR.'/migrations'); // return  array of the file in the folder migrations 
         $toApplyMigrations = array_diff($files, $appliedMogrations);
-
+   
         foreach($toApplyMigrations as $migration){
-            if ($migration === '.' || $migration === '..'){
+            
+            if ($migration === '.' || $migration === '..')
+            {
                 continue;
             }
 
@@ -60,7 +62,6 @@ class Database
     {
         $statement = $this->pdo->prepare("SELECT migration FROM migrations");
         $statement->execute();
-
         return $statement->fetchAll(\PDO::FETCH_COLUMN);
     }
 

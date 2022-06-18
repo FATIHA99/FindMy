@@ -1,6 +1,6 @@
 <?php include_once '../views/decoupage/header.php' ;?>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top">
                 <h4 class="text-warning"> <img src="assets/img/logos/search1.png  " alt="..." />FindMy</h4>
@@ -20,15 +20,15 @@
         </div>
     </nav>
     <main> 
-          <header class="masthead " style="position: relative;" >
+   <header class="masthead " style="position: relative;" >
     <video class="bg-video" playsinline="playsinline" autoplay="" muted="" loop="" style="width:100% ; height:50%;    ">
         <source src="assets/lostt.mp4" type="video/mp4"  />
     </video>
     <!-- Masthead-->
         <div class=" container text-center vedio-text mt-5"  style=" opacity: 2;"> 
-            <div class="masthead-subheading "> <h1 class="text-white">Bienvenu a  FindMy!</h1> </div>
+            <div class="masthead-subheading "> <h1 class="text-white mt-5">Bienvenu a  FindMy!</h1> </div>
             <div class="masthead-heading ">
-                <h3 class="text-white " style="font-family: 'Architects Daughter', cursive;">
+                <h3 class="text-white ms-5 " style="font-family: 'Architects Daughter', cursive;">
                 si vous avez perdu votre objet ? FindMy vous aide à le retrouver en quelques clics ! </h3>
             </div>
             <a class="btn btn-warning btn-xl text-uppercase mb-5 ms-4 text-light  " href="/login" style="width: max-content; height:10%;">Entrer a FindMy </a>

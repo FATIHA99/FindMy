@@ -11,7 +11,7 @@ class messages extends Controller
         $msg = new messagess();
         if($request->isGet())
         {  
-            if(! isset( $_SESSION['login']))
+            if(!isset( $_SESSION['login']))
             {
                  return $this -> render('landingPage');
             } 
@@ -30,8 +30,6 @@ class messages extends Controller
         if ($request->isPost()) {
             $msg->loadData($request->getBody());
             if ($msg->addMsg()) {
-                // return $this->render('contactUs');
-                echo
                 Application::$app->response->redirect('/');
             }
             return $this->render('contactUs');

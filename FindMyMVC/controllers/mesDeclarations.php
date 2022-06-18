@@ -10,7 +10,7 @@ class mesDeclarations extends Controller
 // ! affichage
     public function mesDeclarations(Request $request)
     {
-         
+          // to render all declaration for the current user 
         if(isset( $_SESSION['id']))
         {
             $id=intval($_SESSION['id']); 
@@ -18,7 +18,8 @@ class mesDeclarations extends Controller
   
         $objetsPerdu = new objetPerdu();
         if($request->isGet())
-        {   if(! isset( $_SESSION['login']))
+        {  
+             if(!isset($_SESSION['login']))
             {
                  return $this -> render('landingPage');
             } 
@@ -35,7 +36,6 @@ class mesDeclarations extends Controller
         $obj->loadData($request->getBody());
         if($request->isGet()) 
         {
- 
             if ($obj->delete($obj->id)) 
             {
                 Application::$app->response->redirect('mesDeclarations');

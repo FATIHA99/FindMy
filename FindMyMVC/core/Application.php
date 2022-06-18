@@ -15,7 +15,7 @@ class Application
     public Database $db;
     public static Application $app;
     public Controller $controller;
-    public ?DbModel $user; // might be null
+    public DbModel $user; // might be null
 
     public function __construct($rootPath, array $config)
     {
@@ -23,6 +23,7 @@ class Application
         self::$app = $this;
         $this->request = new Request();
         $this->response = new Response();
+        $this->controller = new Controller();
         $this->session = new Session();
         $this->router = new Router($this->request, $this->response);
         $this->db = new Database($config['db']);
@@ -33,19 +34,12 @@ class Application
         echo $this->router->resolve();
     }
 
-    /**
-     * Get the value of controller
-     */ 
     public function getController()
     {
         return $this->controller;
     }
 
-    /**
-     * Set the value of controller
-     *
-     * @return  self
-     */ 
+
     public function setController(Controller $controller) : void
     {
         $this->controller = $controller;

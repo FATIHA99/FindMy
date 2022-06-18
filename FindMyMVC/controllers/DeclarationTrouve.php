@@ -27,41 +27,40 @@ class DeclarationTrouve extends Controller
       public function update(Request $request)
       {
           $objetTrouve = new objetTrouve();
-          //  par get
+     
           if($request->isGet())
           {
               $objetTrouve -> loadData($request -> getBody());
               $objetTrouve -> selectobjects($objetTrouve->id);
               $objetTrouve -> loadData($objetTrouve->dataList[0]);
-  
+
               $currentImage = $objetTrouve->dataList[0]['image'];
               $_SESSION['current_img'] = $currentImage;
-              $params=[
-              'model' =>$objetTrouve
-              ];
-  
+              $params=[ 'model' =>$objetTrouve ];
+
               return $this ->render('updateDecTrouve',$params);  
           }
          
+
+
           if($request->isPost())
           {
               $data = $request->getBody();
-
-              if(empty($data['image'])) {
+              // to stor the ancien image if the user don't update it 
+              if(empty($data['image'])) 
+              {
                   $data['image'] = $_SESSION['current_img'];
               }
-              $objetTrouve->loadData($data);
 
+              $objetTrouve->loadData($data);
               if ($objetTrouve->update($objetTrouve->id)){
                   Application::$app->response->redirect('mesDeclarationsTrouve');
               }
-              return $this->render('updateDecTrouve', [
-                  'model' => $objetTrouve
-              ]);
+              return $this->render('updateDecTrouve', [ 'model' => $objetTrouve]);
           }
-          return $this->render('updateDecTrouve', [
-              'model' => $objetTrouve
-          ]);
+          return $this->render('updateDecTrouve', [ 'model' => $objetTrouve ]);
+             
+         
   
       
       }

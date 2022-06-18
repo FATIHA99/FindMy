@@ -15,18 +15,18 @@ class AuthController extends Controller
     { 
         $user=new User();
         $loginForm = new LoginForm();
-        if($request -> isPost()){
+        if($request -> isPost())
+        {
             $loginForm-> loadData($request -> getBody());
-            if($loginForm -> validate() && $loginForm -> login())
+            if($loginForm -> validate() && $loginForm -> login()) // return true or false 
             { 
-                $FindMyUser=$user ->findOne(['username'=>  $loginForm->username]);
-                //pour l'admin  
-                if($FindMyUser->fk_user_role === 2)
-                {
-                    Application::$app->response->redirect('/statistique');
-                    return;
-                }
-                //pour un utilisateur normal
+                 $FindMyUser=$user ->findOne(['username'=>  $loginForm->username]);
+                    
+                 if($FindMyUser->fk_user_role === 2)
+                 {
+                     Application::$app->response->redirect('/statistique');
+                     return;
+                 }
                 Application::$app->response->redirect('/home');
                return ;
             }
@@ -34,7 +34,7 @@ class AuthController extends Controller
         $this->setLayout('auth');
         return $this->render('login',['model'=> $loginForm]);
     }
-//  ! register
+//  ! inscription 
     public function signup(Request $request)
     {
         $user=new User();
@@ -44,20 +44,17 @@ class AuthController extends Controller
             if($user->validate() && $user->save())
             {
                 Application::$app->response->redirect('/login');
-                // return $this ->render('login',['model'=> $user ]); 
             }
-      
             return $this ->render('signup',['model'=> $user ]); 
         }
-     
-        return $this ->render('signup',['model'=> $user  ]); 
+        return $this ->render('signup',['model'=> $user]); 
  }
+
 //  ! logout 
 public function logout()
 {
     Application::$app->logout();
     Application::$app->response->redirect('/');
-
 }
 
 }

@@ -5,10 +5,8 @@ use app\core\Model;
 use app\core\Application;
 use app\core\DbModel;
 
-
 class messagess extends DbModel
 {
-    
     public int $id=0;
     public string $name='';
     public string $email='';
@@ -33,13 +31,7 @@ class messagess extends DbModel
 // ! validation  rules 
 public function rules(): array
 {
-    return [
-        // 'nom' => [self::RULE_REQUIRED],
-        // 'genre' => [self::RULE_REQUIRED],
-        // 'job' => [self::RULE_REQUIRED],
-        // 'adresse' =>  [self::RULE_REQUIRED],
-        // 'phone' =>  [self::RULE_REQUIRED],
-    ];
+    return [];
 }
   // ! table des attributs
   public function attributes(): array

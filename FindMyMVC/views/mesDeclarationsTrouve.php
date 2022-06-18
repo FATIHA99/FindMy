@@ -91,7 +91,7 @@
             </div>
             <div class="col">
             <ul>
-                 <li>hhhg</li>
+             
                  <li id="details"></li>
                   <li id="ville"></li>
                   <li id="adresse"></li>

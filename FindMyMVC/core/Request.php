@@ -7,7 +7,6 @@ class Request
 //  ! return the path like  /login 
     public function getPath()
     {
-
         $path = $_SERVER['REQUEST_URI'] ?? '/';
         $position = strpos($path, '?');
 
@@ -15,7 +14,7 @@ class Request
             return $path;
         }
 
-        $path = substr($path, 0, $position);
+        $path = substr($path, 0, $position);// ex login 
         return $path;
     }
 
@@ -44,22 +43,25 @@ class Request
         {
             foreach($_GET as $key => $value)
             {
-                $body[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+                $body[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS); // & () _ 
+
+
             }
         }
+
         if ($this->method() === 'post')
         {
             $_POST['image'] = null;
             foreach($_POST as $key => $value)
             {
                 if(!empty($_FILES['image']['name']) && $key === 'image') {
+
                     $filename = $_FILES['image']['name'];
                     $filetmpname = $_FILES['image']['tmp_name'];
-                    
                     $folder = "files/";
                     if(move_uploaded_file($filetmpname, $folder.$filename))
                     {
-                        $body[$key] = $filename;
+                        $body[$key] = $filename; // name of the image 
                     }
                 }
                 else {

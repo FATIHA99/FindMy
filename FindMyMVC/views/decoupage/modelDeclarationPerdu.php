@@ -80,7 +80,7 @@
 <!-- image -->
         <label class="form-group">  &#10038; image :</label>
         <div class="input-group mb-1 ">
-            <input  type="file" class="form-control" aria-label="With textarea" name="image" required></input>
+            <input  type="file" class="form-control" aria-label="With textarea" name="image" required accept="image/png,image/gif,image/jpeg,image/svg,image/webp"></input>
         </div> 
          <div class="container d-flex justify-content-center m-3">     
             <input type="hidden" class="" name="fk_user" value= <?php  echo  $_SESSION['id'];    ?>>

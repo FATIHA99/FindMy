@@ -9,7 +9,7 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>2009-2011</h4>
+                            <h4>2019</h4>
                             <h4 class="subheading">source de l'aidee </h4>
                         </div>
                         <div class="timeline-body">
@@ -21,7 +21,7 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>March 2011</h4>
+                            <h4>2022</h4>
                             <h4 class="subheading">Nos humbles débuts</h4>
                         </div>
                         <div class="timeline-body">

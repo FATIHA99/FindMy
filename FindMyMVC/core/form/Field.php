@@ -32,8 +32,8 @@ class Field
     {
         return sprintf('
           
-                <label class="form-label">%s</label> 
-              <div class="form-group">
+            <label class="form-label">%s</label> 
+            <div class="form-group">
                 <input type="%s" name="%s" value="%s" class="form-control%s"/>
                 <div class="invalid-feedback">%s</div>
             </div>
@@ -46,7 +46,7 @@ class Field
             $this->model->getFirstError($this->attribute)
         );
     }
-
+ 
     public function passwordField()
     {
         $this->type = self::TYPE_PASSWORD;

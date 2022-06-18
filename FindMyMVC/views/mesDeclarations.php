@@ -3,7 +3,7 @@
  
 <main>
 <div class=" container  d-flex flex-column  justify-content-center align-items-center">
-<h1 class="text-danger text-center pb-4 ">Declaration des objets perdu</h1>
+<h1 class="text-danger text-center pb-4 ">Déclaration des objets perdus</h1>
     <div>
         <a  href="/mesDeclarationsTrouve" class="btn btn-success mb-3">voir les declaration trouvé </a>
     </div>
@@ -17,7 +17,7 @@
                     <table class="table custom-table" >
                         <thead>
                             <tr>
-                                <th> </th>
+                                <th></th>
                                 <th scope="col">Photo</th>
                                 <th scope="col">Objet</th>
                                 <th scope="col">Categorie</th>

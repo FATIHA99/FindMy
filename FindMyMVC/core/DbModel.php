@@ -11,14 +11,12 @@ abstract class DbModel extends Model
     public $dataList = [];
     abstract public function tableName(): string;
     abstract public function attributes(): array;
-
 // ! to insert 
     public function save()
     {
         $tableName = $this->tableName();
         $attributes = $this->attributes();
-      
-        $params = array_map(fn($attr) => ":$attr", $attributes );
+        $params = array_map(fn($attr) => ":$attr", $attributes ); // usename   ===  :username
         $statement = self::prepare("INSERT INTO $tableName (".implode(',', $attributes).")  VALUES (".implode(',', $params).") ");
         foreach($attributes as $attribute)
         { 
@@ -33,18 +31,18 @@ abstract class DbModel extends Model
         return Application::$app->db->pdo->prepare($sql); 
     }
 // ! find one user
-    public  function findOne($where)
-    {
-      $tableName= static::tableName();
-      $attributes =array_keys($where);
-      $sql=  implode("AND",array_map(fn($attr)=>"$attr=:$attr",$attributes));
+    public  function findOne($where)   // ['username'=> $this -> username]
+    {  
+      $tableName = $this->tableName(); 
+      $attributes = array_keys($where);
+      $sql=  implode("AND",array_map(fn($attr)=>"$attr=:$attr", $attributes));
       $statement = self::prepare("SELECT * FROM $tableName WHERE $sql");
       foreach($where as  $key => $item )
       {
         $statement -> bindValue(":$key",$item);
       }
       $statement -> execute();
-      return $statement -> fetchObject(static::class);
+      return $statement -> fetchObject(static::class); // return one row from users  username ='fatiha' , password = 'dfgv'
     }
 
   // ! to render all information
@@ -52,7 +50,6 @@ abstract class DbModel extends Model
     {
         $tableName = $this->tableName();
         $statement = self::prepare("SELECT * FROM  $tableName");
-       
         $statement->execute();
         return  $this->dataList =  $statement->fetchAll();
 
@@ -63,16 +60,16 @@ abstract class DbModel extends Model
         $tableName = $this->tableName();
         $statement = self::prepare("SELECT * FROM $tableName where fk_user = $id");
         $statement->execute();
-      
        return  $this->dataList = $statement->fetchAll();
     }
+
     // for update
     public function selectobjects(int $id)
     {
         $tableName = $this->tableName();
         $statement = self::prepare("SELECT * FROM $tableName where id = $id");
         $statement->execute();
-      
+        
        return  $this->dataList = $statement->fetchAll();
     }
 
@@ -110,5 +107,20 @@ abstract class DbModel extends Model
         return  $statement -> fetch();
     }
  
+    // ! recerch par categori
+    public function search($where)
+    {
+        $tableName = $this->tableName();
+        $attributes =array_keys($where);
+        $sql=  implode("AND",array_map(fn($attr)=>"$attr=:$attr",$attributes));
+        $statement = self::prepare("  SELECT * from $tableName WHERE $sql");
+        foreach($where as  $key => $item )
+        {
+          $statement -> bindValue(":$key",$item);
+        }
+        $statement -> execute();
+        return $statement -> fetchAll();
+    }
+
 
 }

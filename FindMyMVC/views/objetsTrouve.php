@@ -1,32 +1,27 @@
-<div class="d-flex flex-column  sticky-top  justify-content-center align-items-center"style="top:90px; left:10%; z-index: 3;">
-    <div class="m-2  bg-light col-7 col-lg-2 rounded"  >
-        <h5 class="text-decoration-underline m-2"> <?php   echo  $_SESSION['user'];    ?>  </h5>
-        <div class="d-flex align-items-center border bg-white px-3   m-1 ">
-        <i class="bi bi-search"></i>
-            <select class="form-select border-0 " aria-label="Default select example ">
-            <option selected>Qui cherche vous?</option>
-            <option value="1 ">Papier </option>
-            <option value="2 ">persone</option>
-            <option value="3 ">animal</option>
-            <option value="3 ">clefs</option>
-          </select>
-        </div>
-        <div class="d-flex align-items-center border border-1 bg-white px-3 m-1 " style="height: 5%; " >
-        <i class=" me-3 bi bi-geo-alt"></i>
-            <select class="form-select border-0 " aria-label="Default select example ">
-            <option selected>Toutes le maroc </option>
-            <option value="1 ">casablanca </option>
-            <option value="2 ">El jadida</option>
-            <option value="3 ">Agadir</option>
-            <option value="3 ">safi</option>
-            <option value="3 ">fes</option>
-            <option value="3 ">rabat</option>
-            <option value="3 ">tanget</option>
-          </select>
-        </div>
+
+<form action="" method="post" class="d-flex  flex-column justify-content-center justify-items-end mt-5 ms-5 sticky-top " style="top:7%;" >
+    <div class=" m-2 d-flex   flex-column   col-11 col-lg-2 rounded ms-5 ">
+        <div class="input-group d-flex  mt-2  bg-white border-1 " >
+                <div class="d-flex align-items-center border border-0 bg-white px-3 m-1 " style="height: 5%; " >
+                <!-- <i class=" me-3 bi bi-geo-alt"></i> -->
+                    <select class="form-select border-0  " aria-label="Default select example " name="ville">
+                    <option selected>Toutes le maroc</option>
+                    <option>casablanca </option>
+                    <option>El jadida</option>
+                    <option>Agadir</option>
+                    <option>safi</option>
+                    <option>fes</option>
+                    <option>rabat</option>
+                    <option>tanget</option>
+                </select>
+                </div>
+            <button  type="submit" class="btn bg-warning">
+                <i class="fas fa-search"></i>
+            </button>
+         </div>
     </div>
-    </div>
-<div>
+</form>
+
     <?php  foreach($objetTrouve as $val ){ ?>
         <div class="container-fluid  d-flex flex-column  justify-content-center align-items-center">
     <div class="card mb-3     col-8 border-bottom  rounded-3 bg-light " style="max-width: 800px; ">      

@@ -25,13 +25,13 @@ class LoginForm extends Model
         return[
             'username'=>'nom de utilisateur ',
             'user_password'=>'mot de passe ',
-          
-
         ];
     } 
 
+    
     public function login()
-    {  $user=  new User();
+    { 
+         $user=  new User();
          $fatiha = $user ->findOne(['username'=> $this -> username]);
          if(!$fatiha)
          {
@@ -40,7 +40,7 @@ class LoginForm extends Model
          }
          if($this->user_password  !== $fatiha->user_password)
          {
-             $this -> Error('user_password' ,'Pasword is incorresct');
+             $this -> Error('user_password' ,'Pasword is incorrect');
              return false;
          }
         
@@ -48,7 +48,7 @@ class LoginForm extends Model
           $_SESSION['user']=$fatiha->username;
           $_SESSION['id']=$fatiha->id;
           $_SESSION['login']=true;
-                    return true ;
+        return true ;
     }
 
 }

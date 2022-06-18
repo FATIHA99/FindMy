@@ -6,7 +6,7 @@
         <div class="me-5 d-none d-lg-block">
             <span>Rejoignez-nous sur les réseaux sociaux :</span>
         </div>
-  
+   <!--  les icones -->
         <div>
             <a class="me-4 ">
             <i class="bi bi-facebook"></i>
@@ -54,7 +54,6 @@
                     <p><i class="fas fa-home me-3  text-dark"></i>  Maroc-youssoufia, YOUCODE </p>
                     <p><i class="fas fa-envelope me-3 text-dark"></i> fatihhaa27@gmail.com</p>
                     <p><i class="fas fa-phone me-3 text-dark"></i> + 212616128083</p>
-                 
                 </div>
             </div>
         </div>
@@ -62,6 +61,6 @@
 
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
         © 2021 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">FindMy.com</a>
+        <a class="text-reset fw-bold" href="https://findmy.com/">FindMy.com</a>
     </div>
 </footer>

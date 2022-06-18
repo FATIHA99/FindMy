@@ -15,23 +15,21 @@ $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->safeLoad();
 
 $config = [
-    'userClass'=>\app\models\User::class,
+    // 'userClass'=>\app\models\User::class,
     'db' => [
         'dsn' => $_ENV['DB_DSN'],
         'user' => $_ENV['DB_USER'],
         'password' => $_ENV['DB_PASSWORD']
-    ]
+           ]
     ];
 
 $app = new Application(dirname(__DIR__), $config);
-
 $app->router->get('/', [new SiteController(), 'landingPage']);
 // !login
 $app->router->get('/login', [AuthController::class, 'login']);
 $app->router->post('/login', [AuthController::class, 'login']);
 // ! logout
 $app->router->get('/logout', [AuthController::class, 'logout']);
-
 // !sign up
 $app->router->get('/signup', [AuthController::class, 'signup']);
 $app->router->post('/signup', [AuthController::class, 'signup']);
@@ -56,7 +54,7 @@ $app->router->post('/mesDeclarationsTrouve', [mesDeclarationsTrouve::class, 'mes
 // ! supprimer objet perdu 
 $app->router->get('/deleteObjetPerdu', [new mesDeclarations(), 'delete']);//
 $app->router->post('/deleteObjetPerdu', [new mesDeclarations(), 'delete']);
-// ! supprimer objet perdu 
+// ! supprimer objet Trouve 
 $app->router->get('/deleteObjetTrouve', [new mesDeclarationsTrouve(), 'delete']);//
 $app->router->post('/deleteObjetTrouve', [new mesDeclarationsTrouve(), 'delete']);
 // !update objet perdu 

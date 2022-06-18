@@ -7,12 +7,13 @@ class User extends DbModel
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
     const STATUS_DELETED = 2;
-
-    public int $id =0;
+//    insciption 
+    public int $id = 0;
     public string $username = '';
     public string $user_password = '';
     public int $fk_user_role = 0;
     public string $confirmPassword = '';
+    
     public function tableName(): string
     {
         return 'users';

@@ -4,7 +4,7 @@
     <div  class="container-fluid d-flex align-items-center justify-content-center h-75 mt-5"  >
         <div class="text-center">
              <h1 class=""> Bienvenu cher client</h1>
-            <h4 class=""> choisir l'état de votre objet !</h4>
+            <h4 class="">Choisissez  l'état de votre objet !</h4>
             <div class="row">
                 <a   href="/DeclarationTrouve" class=" col btn btn-success m-3" >trouvé </a>
                 <a href="/DeclarationPerdu" class=" col btn btn-danger m-3" > Perdu </a>

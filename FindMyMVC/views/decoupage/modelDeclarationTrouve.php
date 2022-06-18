@@ -22,16 +22,16 @@
        <div class="row">
         <div class="py-3  col ">
              <label>  &#10038; nom  de l'objet :</label> <br>
-            <input type="text" class="p-1 border border-warning" name="objet">
+            <input type="text" class="p-1 border border-warning is-valid" name="objet" id="objet">
         </div>
 <!-- categorie -->
          <div class="col"> 
              <label>  &#10038; Catégorie :</label>
-                <select class="form-select" name="categorie">
-                <option> categories</option>
+                <select class="form-select" name="categorie" id="categorie">
+            
                 <option> Personne</option>
                 <option> animal</option>
-                <option> Objet</option>
+                <option selected> Objet</option>
                 </select>
           </div>
           </div>
@@ -40,12 +40,12 @@
             <div class="py-3 col ">
                 <label>  &#10038;  Date de perd  :</label>
                 <br>
-                <input type="date" class="p-1 border border-warning" name="dateDeTrouve">
+                <input type="date" class="p-1 border border-warning" name="dateDeTrouve" id="date">
             </div>
 <!-- ville  -->
        <div class="col">
         <label>  &#10038; Ville :</label>
-        <select class="form-select " aria-label="Default select example" name="ville">
+        <select class="form-select " aria-label="Default select example" name="ville" id="ville">
             <option selected>Toutes le maroc </option>
             <option value="casablanca">casablanca </option>
             <option value="El jadida">El jadida</option>
@@ -61,33 +61,34 @@
         <label>  &#10038; Adresse :</label>
         <div class="input-group ">
             <span class="input-group-text ">Adresse</span>
-            <textarea class="form-control " aria-label="With textarea" name="adresse"></textarea>
+            <textarea class="form-control " aria-label="With textarea" name="adresse" id="adresse"></textarea>
         </div>
 <!-- details -->
         <label>  &#10038; details :</label>
         <div class="input-group mb-1 ">
             <span class="input-group-text "> plus details </span>
-            <textarea class="form-control " aria-label="With textarea" name="details"></textarea>
+            <textarea class="form-control " aria-label="With textarea" name="details" id="details"></textarea>
         </div>
 
 <!--tele -->
         <label>  &#10038;tele :</label>
         <div class="input-group mb-1 ">
-        <input  class="p-1 border border-warning"  type="text" placeholder="telephone " name="tele">
+        <input  class="p-1 border border-warning"  type="text" placeholder="telephone " name="tele" id="tele">
         </div>
 
  <!-- despo -->
            <label>  &#10038;disponibilité </label>
         <div class="input-group mb-1 ">
         <span class="input-group-text "> disponibilité </span>
-            <textarea class="form-control " aria-label="With textarea" name="despo"></textarea>
+        <textarea class="form-control " aria-label="With textarea" name="despo" id="despo"></textarea>
         <!-- <input  class="p-1 border border-warning"  type="text" placeholder="telephone " name="despo"> -->
         </div>
 <!-- image -->
         <label>  &#10038; image :</label>
         <div class="input-group mb-1 ">
-            <input  type="file" class="form-control " aria-label="With textarea" name="image"></input>
+            <input  type="file" class="form-control " aria-label="With textarea" name="image" required></input>
         </div> 
+        <!--  input for the user id  -->
          <div class="container d-flex justify-content-center m-3">     
             <input type="hidden" class="" name="fk_user" value= <?php   echo  $_SESSION['id'];    ?>>
         </div>

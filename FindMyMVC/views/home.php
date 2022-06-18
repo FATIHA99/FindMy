@@ -1,31 +1,32 @@
 <?php include_once '../views/decoupage/header.php' ;?>
 <?php include_once '../views/decoupage/navbar.php' ;?>
-    <div class="SEARCH   m-2 bg-light sticky-top d-flex flex-column  col-11 col-lg-2 rounded" style="top:90px; z-index: 3; ">
-        <h5 class="text-decoration-underline m-2"> <?php   echo  $_SESSION['user'];    ?>  </h5>
-        <div class="d-flex align-items-center border bg-white px-3  m-1 ">
-        <i class="bi bi-search"></i>
-            <select class="form-select border-0 " aria-label="Default select example ">
-            <option selected>Qui cherche vous?</option>
-            <option value="1 ">Papier </option>
-            <option value="2 ">persone</option>
-            <option value="3 ">animal</option>
-            <option value="3 ">clefs</option>
-          </select>
-        </div>
-        <div class="d-flex align-items-center border border-1 bg-white px-3 m-1 " style="height: 5%; " >
-        <i class=" me-3 bi bi-geo-alt"></i>
-            <select class="form-select border-0 " aria-label="Default select example ">
-            <option selected>Toutes le maroc </option>
-            <option value="1 ">casablanca </option>
-            <option value="2 ">El jadida</option>
-            <option value="3 ">Agadir</option>
-            <option value="3 ">safi</option>
-            <option value="3 ">fes</option>
-            <option value="3 ">rabat</option>
-            <option value="3 ">tanget</option>
-          </select>
-        </div>
+
+
+<form action="" method="post" class="sticky-top " style="top:20%; width:max-content" >
+    <div class="bg-white  m-2 d-flex   flex-column  rounded">
+        <h5 class=" m-2"> <i class='bx bxs-user fs-5 mt-2'></i>  <?php   echo  $_SESSION['user'];    ?>  </h5>
+        <div class="input-group d-flex  mt-2  bg-white border-1 " >
+                <div class="d-flex align-items-center border border-0 bg-white px-3 m-1 " style="height: 5%; " >
+                <!-- <i class=" me-3 bi bi-geo-alt"></i> -->
+                <select class="form-select border-0  " aria-label="Default select example " name="ville">
+                    <option selected>Toutes le maroc</option>
+                    <option>casablanca </option>
+                    <option>El jadida</option>
+                    <option>Agadir</option>
+                    <option>safi</option>
+                    <option>fes</option>
+                    <option>rabat</option>
+                    <option>tanget</option>
+                </select>
+                </div>
+            <button  type="submit" class="btn bg-warning">
+                <i class="fas fa-search"></i>
+            </button>
+         </div>
     </div>
+</form>
+
+<!--  les cartes   -->
 <div>
     <?php  foreach($objets as $val ){ ?>
     <div class="card mb-3 container  p-0 border-bottom border-dark rounded-3 bg-light " style="max-width: 800px; ">      
@@ -56,7 +57,6 @@
 
 </div>
 <?php include_once '../views/decoupage/footer.php' ;?>
-
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->

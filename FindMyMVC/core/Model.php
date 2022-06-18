@@ -11,53 +11,71 @@ abstract class Model
     public const RULE_MATCH = 'match';
     public const RULE_UNIQUE = 'unique';
 
+    public array $errors = [];
+    abstract public function rules(): array;
+    
+//  ! load data from form to the attributes
     public function loadData($data)
-    {
+    {   // data = [image => car.png,
+        //       objet=> car ]
+
         foreach($data as $key => $value) {
             if(property_exists($this, $key)) {
                 $this->{$key} = $value;
+              //  $this -> image = 'car.png'; 
             }
         }
     }
 
-    abstract public function rules(): array;
+    //! labels methode 
     public function labels():array
     {
         return [];
     }
 
-    public array $errors = [];
-
+// ! validation method
     public function validate()
     {
-        foreach($this->rules() as $attribute => $rules) {
-            $value = $this->{$attribute};
-            foreach($rules as $rule) {
-                $ruleName = $rule;
-                if(!is_string($ruleName)) {
+        foreach($this->rules() as $attribute => $rules)
+       {
+            $value = $this->{$attribute}; //objet : 'fatiha' 
+
+            foreach($rules as $rule) //!'user_password' => [  self::RULE_REQUIRED  ,   [self::RULE_MIN, 'min' => 4],  [self::RULE_MAX, 'max' => 24]    ],
+            {  // rule = "required";
+                
+                $ruleName = $rule; // [self::RULE_MIN, 'min' => 4]
+                if(!is_string($ruleName)) 
+                {
                     $ruleName = $rule[0];
                 }
-                if ($ruleName === self::RULE_REQUIRED && !$value) {
+
+                if ($ruleName === self::RULE_REQUIRED && !$value) 
+                {
                     $this->addError($attribute, self::RULE_REQUIRED);
                 }
 
-                if ($ruleName === self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                if ($ruleName === self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)) 
+                {
                     $this->addError($attribute, self::RULE_EMAIL);
                 }
 
-                if ($ruleName === self::RULE_MIN && strlen($value) < $rule['min']) {
+                if ($ruleName === self::RULE_MIN && strlen($value) < $rule['min'])
+                {
                     $this->addError($attribute, self::RULE_MIN, $rule);
                 }
 
-                if ($ruleName === self::RULE_MAX && strlen($value) > $rule['max']) {
+                if ($ruleName === self::RULE_MAX && strlen($value) > $rule['max'])
+                {
                     $this->addError($attribute, self::RULE_MAX, $rule);
                 }
                 
-                if ($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']}) {
+                if ($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']})
+                {
                     $this->addError($attribute, self::RULE_MATCH, $rule);
                 }
 
-                if ($ruleName === self::RULE_UNIQUE) {
+                if ($ruleName === self::RULE_UNIQUE) 
+                {
                     $className = $rule['class'];
                     $uniqueAttribute  = $rule['attribute'] ?? $attribute;
                     $tableName = $className::tableName();
@@ -66,31 +84,28 @@ abstract class Model
                     $statement->execute();
                     $record = $statement->fetchObject();
 
-                    if ($record ) {
+                    if ($record ) 
+                    {
                         $this->addError($attribute, self::RULE_UNIQUE, ['field' => $attribute]);
                     }
                 }
             }
         }
-
         return empty($this->errors);
     }
-// ! add error
+// ! add error            username   self::RULE_MIN  [self::RULE_MIN, 'min' => 4]
     private function addError(string $attribute, string $rule, $params = [])
-    {
+    {  // [0]min [min] =>4
+       
         $message = $this->errorMessages()[$rule] ?? '';
+
         foreach($params as $key => $value) {
             $message = str_replace("{{$key}}", $value, $message);
+            // min ,4,message 
         }
         $this->errors[$attribute][ ] = $message;
     }
-
-// ! error 
-    public function Error(string $attribute, string $message)
-    {
-       
-        $this->errors[$attribute][] = $message;
-    }
+    // !message 
     public function errorMessages() 
     {
         return [
@@ -103,6 +118,14 @@ abstract class Model
         ];
     }
 
+
+    
+
+    // ! error 
+    public function Error(string $attribute, string $message)
+    {
+        $this->errors[$attribute][] = $message;
+    }
     public function hasError($attribute)
     {
         return $this->errors[$attribute] ?? false;

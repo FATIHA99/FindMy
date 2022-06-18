@@ -17,7 +17,6 @@ class mesDeclarationsTrouve extends Controller
             $id=intval($_SESSION['id']); 
         } 
   
-
         $objetsTrouve = new objetTrouve();
         if($request->isGet())
         {  

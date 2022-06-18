@@ -48,6 +48,9 @@
     </main>
 
     <?php include_once '../views/decoupage/footer.php' ;?>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="fontawesome-v6/js/all.min.js"></script>   
 </body>
 </html>
